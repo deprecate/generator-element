@@ -1,47 +1,51 @@
-# generator-element [![Build Status](https://secure.travis-ci.org/webcomponents/generator-element.png?branch=master)](https://travis-ci.org/webcomponents/generator-element)
+# Yeoman Generator for Web Components [![Build Status](https://secure.travis-ci.org/webcomponents/generator-element.png?branch=master)](https://travis-ci.org/webcomponents/generator-element) [![Dependency Status](https://david-dm.org/webcomponents/generator-element.png)](https://david-dm.org/webcomponents/generator-element)
 
-> [Yeoman](http://yeoman.io) generator
+![WC + Yeoman](http://f.cl.ly/items/0Z0Q180C0F0a1h0y3v2S/yo.jpg)
 
+> A Yeoman Generator that provides a [functional boilerplate](https://github.com/webcomponents/element-boilerplate) to easily create Web Component elements using [Polymer](http://www.polymer-project.org/).
 
-## Getting Started
+## Getting started
 
-### What is Yeoman?
+1. Install using NPM:
 
-Trick question. It's not a thing. It's this guy:
+    ```sh
+    $ [sudo] npm install -g generator-element
+    ```
 
-![](http://i.imgur.com/JHaAlBJ.png)
+2. Scaffold your new project:
 
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
+    ```sh
+    $ yo element
+    ```
 
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
+3. Start writing your custom element!
 
-```
-$ npm install -g yo
-```
+## Structure
 
-### Yeoman Generators
-
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
-
-To install generator-element from npm, run:
-
-```
-$ npm install -g generator-element
-```
-
-Finally, initiate the generator:
+The basic structure of the project is given in the following way.
 
 ```
-$ yo element
+.
+├── .bowerrc
+├── .editorconfig
+├── .gitignore
+├── bower.json
+├── package.json
+├── index.html
+├── Gruntfile.js
+└── src/my-element.html
 ```
 
-### Getting To Know Yeoman
+## Roadmap
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
+- [✔] Scaffold an element using Polymer
+- [—] Scaffold an element using X-Tag
+- [—] Scaffold an element using VanillaJS
 
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+## History
 
+For detailed changelog, see [Releases](https://github.com/webcomponents/generator-element/releases).
 
 ## License
 
-MIT
+[MIT License](http://zenorocha.mit-license.org/) © Zeno Rocha
