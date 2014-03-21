@@ -11,6 +11,7 @@ var ElementGenerator = yeoman.generators.Base.extend({
 
         this.on('end', function () {
             if (!this.options['skip-install']) {
+                this.bowerInstall();
                 this.npmInstall();
             }
         });
@@ -43,13 +44,23 @@ var ElementGenerator = yeoman.generators.Base.extend({
         this.mkdir('app');
         this.mkdir('app/templates');
 
-        this.copy('_package.json', 'package.json');
         this.copy('_bower.json', 'bower.json');
+        this.copy('_package.json', 'package.json');
     },
 
-    projectfiles: function () {
+    element: function () {
+        this.mkdir('src');
+
+        this.copy('index.html', 'index.html');
+        this.copy('Gruntfile.js', 'Gruntfile.js');
+        this.copy('README.md', 'README.md');
+        this.copy('src/my-element.html', 'src/my-element.html');
+    },
+
+    dotfiles: function () {
+        this.copy('bowerrc', '.bowerrc');
         this.copy('editorconfig', '.editorconfig');
-        this.copy('jshintrc', '.jshintrc');
+        this.copy('gitignore', '.gitignore');
     }
 });
 

@@ -20,9 +20,20 @@ describe('element generator', function () {
 
     it('creates expected files', function (done) {
         var expected = [
-            // add files you expect to exist here.
-            '.jshintrc',
-            '.editorconfig'
+            // dotfiles
+            '.bowerrc',
+            '.editorconfig',
+            '.gitignore',
+
+            // element
+            'index.html',
+            'Gruntfile.js',
+            'README.md',
+            'src/my-element.html',
+
+            // app
+            'bower.json',
+            'package.json'
         ];
 
         helpers.mockPrompt(this.app, {
