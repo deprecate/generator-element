@@ -30,6 +30,11 @@ var ElementGenerator = yeoman.generators.Base.extend({
         this.prompt(prompts, function (props) {
             this.elementName = this._.slugify(props.elementName);
 
+            // according to the spec, all elements must contain a dash on its name
+            if (this.elementName.indexOf('-') === -1) {
+                this.elementName = 'x-' + this.elementName;
+            }
+
             done();
         }.bind(this));
     },
