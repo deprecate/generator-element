@@ -1,9 +1,9 @@
 'use strict';
+
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
-
 
 var ElementGenerator = yeoman.generators.Base.extend({
     init: function () {
@@ -20,30 +20,21 @@ var ElementGenerator = yeoman.generators.Base.extend({
     askFor: function () {
         var done = this.async();
 
-        // have Yeoman greet the user
-        console.log(this.yeoman);
-
-        // replace it with a short and sweet description of your generator
-        console.log(chalk.magenta('You\'re using the fantastic Element generator.'));
+        console.log(chalk.magenta('\nCustom Element generator brought to you by WebComponents.org\n'));
 
         var prompts = [{
-            type: 'confirm',
-            name: 'someOption',
-            message: 'Would you like to enable this option?',
-            default: true
+            name: 'elementName',
+            message: 'What\'s the name of your element?'
         }];
 
         this.prompt(prompts, function (props) {
-            this.someOption = props.someOption;
+            this.elementName = this._.slugify(props.elementName);
 
             done();
         }.bind(this));
     },
 
     app: function () {
-        this.mkdir('app');
-        this.mkdir('app/templates');
-
         this.copy('_bower.json', 'bower.json');
         this.copy('_package.json', 'package.json');
     },
@@ -54,7 +45,7 @@ var ElementGenerator = yeoman.generators.Base.extend({
         this.copy('index.html', 'index.html');
         this.copy('Gruntfile.js', 'Gruntfile.js');
         this.copy('README.md', 'README.md');
-        this.copy('src/my-element.html', 'src/my-element.html');
+        this.copy('src/my-element.html', 'src/' + this.elementName + '.html');
     },
 
     dotfiles: function () {

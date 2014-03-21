@@ -2,18 +2,18 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>&lt;my-element&gt;</title>
+    <title>&lt;<%= elementName %>&gt;</title>
 
     <!-- Importing Web Component's Polyfill -->
     <script src="lib/platform/platform.js"></script>
 
     <!-- Importing Custom Elements -->
-    <link rel="import" href="src/my-element.html">
+    <link rel="import" href="src/<%= elementName %>.html">
 </head>
 <body>
 
     <!-- Using Custom Elements -->
-    <my-element name="Zeno"></my-element>
+    <<%= elementName %> name="Zeno"></<%= elementName %>>
 
 </body>
 </html>
