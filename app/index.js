@@ -25,10 +25,14 @@ var ElementGenerator = yeoman.generators.Base.extend({
         var prompts = [{
             name: 'elementName',
             message: 'What\'s the name of your element?'
+        }, {
+            name: 'elementDescription',
+            message: 'What\'s the description of your element?'
         }];
 
         this.prompt(prompts, function (props) {
             this.elementName = this._.slugify(props.elementName);
+            this.elementDescription = props.elementDescription;
 
             // according to the spec, all elements must contain a dash on its name
             if (this.elementName.indexOf('-') === -1) {

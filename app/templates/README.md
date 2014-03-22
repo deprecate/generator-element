@@ -1,6 +1,6 @@
 # &lt;<%= elementName %>&gt;
 
-> TODO: Write a project description
+> <%= elementDescription %>
 
 ## Demo
 

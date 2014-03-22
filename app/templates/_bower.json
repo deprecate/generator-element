@@ -1,7 +1,7 @@
 {
     "name": "<%= elementName %>",
     "version": "0.0.0",
-    "description": "TODO: Write a project description",
+    "description": "<%= elementDescription %>",
     "authors": [
         "TODO: Write your name"
     ],
