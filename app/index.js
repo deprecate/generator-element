@@ -51,10 +51,10 @@ var ElementGenerator = yeoman.generators.Base.extend({
     element: function () {
         this.mkdir('src');
 
-        this.copy('index.html', 'index.html');
-        this.copy('Gruntfile.js', 'Gruntfile.js');
-        this.copy('README.md', 'README.md');
-        this.copy('src/my-element.html', 'src/' + this.elementName + '.html');
+        this.copy('_Gruntfile.js', 'Gruntfile.js');
+        this.copy('_index.html', 'index.html');
+        this.copy('_README.md', 'README.md');
+        this.copy('src/_my-element.html', 'src/' + this.elementName + '.html');
     },
 
     dotfiles: function () {
