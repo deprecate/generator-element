@@ -34,7 +34,7 @@ Attribute  | Options                   | Default             | Description
 `bar`      | `abc`, `def`, `ghi`       | `foo`               | Lorem ipsum
 `blah`     | *int*                     | `100`               | Lorem ipsum
 
-## Setup
+<% if (grunt.length !== 0) { %>## Setup
 
 In order to run it locally you'll need a basic server setup.
 
@@ -55,7 +55,7 @@ In order to run it locally you'll need a basic server setup.
 
     ```sh
     $ grunt connect
-    ```
+    ```<% } %>
 
 ## Contributing
 

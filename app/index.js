@@ -32,22 +32,28 @@ var ElementGenerator = yeoman.generators.Base.extend({
             name: 'elementDescription',
             message: 'What\'s the description of your element?',
             validate: validator.description
-        },
-        {
+        }, {
             name: 'githubUser',
             message: 'What\'s your GitHub username?',
             validate: validator.githubUser
-        },
-        {
+        }, {
             name: 'githubRepo',
             message: 'What\'s the repository name?',
             validate: validator.githubRepo
-        },
-        {
+        }, {
             type: 'confirm',
             name: 'lifecycle',
             message: 'Do you want to include lifecycle callbacks?',
             default: false
+        }, {
+            type: 'checkbox',
+            name: 'grunt',
+            message: 'What Grunt tasks do you want to include?',
+            choices: [{
+                name: 'Connect - to run a local web server (good for tests)',
+                value: 'connect',
+                checked: true
+            }]
         }];
 
         this.prompt(prompts, function (props) {
@@ -55,6 +61,7 @@ var ElementGenerator = yeoman.generators.Base.extend({
             this.elementDescription = props.elementDescription;
             this.githubUser = props.githubUser;
             this.githubRepo = props.githubRepo;
+            this.grunt = props.grunt;
             this.lifecycle = props.lifecycle;
 
             done();
@@ -69,7 +76,11 @@ var ElementGenerator = yeoman.generators.Base.extend({
     element: function () {
         this.mkdir('src');
 
-        this.copy('_Gruntfile.js', 'Gruntfile.js');
+        if (this.grunt.length !== 0) {
+            this.copy('gitignore', '.gitignore');
+            this.copy('_Gruntfile.js', 'Gruntfile.js');
+        }
+
         this.copy('_index.html', 'index.html');
         this.copy('_README.md', 'README.md');
         this.copy('src/_my-element.html', 'src/' + this.elementName + '.html');
@@ -78,7 +89,6 @@ var ElementGenerator = yeoman.generators.Base.extend({
     dotfiles: function () {
         this.copy('bowerrc', '.bowerrc');
         this.copy('editorconfig', '.editorconfig');
-        this.copy('gitignore', '.gitignore');
     }
 
 });
