@@ -29,6 +29,9 @@ var ElementGenerator = yeoman.generators.Base.extend({
                 if (input === '') {
                     return 'Please fill your element name, for example: "my-element".';
                 }
+                else if (input.indexOf('-') === -1) {
+                    return 'According to the spec, all elements must contain a dash on its name, for example: "my-element".';
+                }
             }
         }, {
             name: 'elementDescription',
@@ -50,11 +53,6 @@ var ElementGenerator = yeoman.generators.Base.extend({
             this.elementName = this._.slugify(props.elementName);
             this.elementDescription = props.elementDescription;
             this.lifecycle = props.lifecycle;
-
-            // according to the spec, all elements must contain a dash on its name
-            if (this.elementName.indexOf('-') === -1) {
-                this.elementName = 'x-' + this.elementName;
-            }
 
             done();
         }.bind(this));
