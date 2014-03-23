@@ -24,10 +24,20 @@ var ElementGenerator = yeoman.generators.Base.extend({
 
         var prompts = [{
             name: 'elementName',
-            message: 'What\'s the name of your element?'
+            message: 'What\'s the name of your element?',
+            validate: function(input) {
+                if (input === '') {
+                    return 'Please fill your element name, for example: "my-element".';
+                }
+            }
         }, {
             name: 'elementDescription',
-            message: 'What\'s the description of your element?'
+            message: 'What\'s the description of your element?',
+            validate: function(input) {
+                if (input === '') {
+                    return 'Please fill your element description, for example: "My awesome Web Component using Polymer".';
+                }
+            }
         },
         {
             type: 'confirm',
