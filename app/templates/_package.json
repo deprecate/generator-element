@@ -6,10 +6,10 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/webcomponents/element-boilerplate"
+        "url": "https://github.com/<%= githubUser %>/<%= githubRepo %>"
     },
     "bugs": {
-        "url": "https://github.com/webcomponents/element-boilerplate/issues"
+        "url": "https://github.com/<%= githubUser %>/<%= githubRepo %>/issues"
     },
     "devDependencies": {
         "grunt": "~0.4.1",

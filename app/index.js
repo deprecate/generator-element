@@ -34,6 +34,16 @@ var ElementGenerator = yeoman.generators.Base.extend({
             validate: validator.description
         },
         {
+            name: 'githubUser',
+            message: 'What\'s your GitHub username?',
+            validate: validator.githubUser
+        },
+        {
+            name: 'githubRepo',
+            message: 'What\'s the repository name?',
+            validate: validator.githubRepo
+        },
+        {
             type: 'confirm',
             name: 'lifecycle',
             message: 'Do you want to include lifecycle callbacks?',
@@ -43,6 +53,8 @@ var ElementGenerator = yeoman.generators.Base.extend({
         this.prompt(prompts, function (props) {
             this.elementName = this._.slugify(props.elementName);
             this.elementDescription = props.elementDescription;
+            this.githubUser = props.githubUser;
+            this.githubRepo = props.githubRepo;
             this.lifecycle = props.lifecycle;
 
             done();

@@ -4,7 +4,7 @@
 
 ## Demo
 
-[Check it live!](http://webcomponents.github.io/element-boilerplate)
+[Check it live!](http://<%= githubUser %>.github.io/<%= githubRepo %>)
 
 ## Usage
 
@@ -67,7 +67,7 @@ In order to run it locally you'll need a basic server setup.
 
 ## History
 
-For detailed changelog, check [Releases](https://github.com/webcomponents/element-boilerplate/releases).
+For detailed changelog, check [Releases](https://github.com/<%= githubUser %>/<%= githubRepo %>/releases).
 
 ## License
 
