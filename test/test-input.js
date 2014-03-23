@@ -26,12 +26,26 @@ describe('input validation', function () {
 
             assert.equal(actual, expected);
         });
+
+        it('is valid', function () {
+            var actual = validator.name('my-element'),
+                expected = true;
+
+            assert.equal(actual, expected);
+        });
     });
 
     describe('element description', function () {
         it('cannot be blank', function () {
             var actual = validator.description(''),
                 expected = validator.ERR_DESCRIPTION_BLANK;
+
+            assert.equal(actual, expected);
+        });
+
+        it('is valid', function () {
+            var actual = validator.description('My awesome Web Component using Polymer'),
+                expected = true;
 
             assert.equal(actual, expected);
         });

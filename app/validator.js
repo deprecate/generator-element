@@ -27,12 +27,16 @@ var InputValidator = {
                 return InputValidator.ERR_NAME_EXISTS;
             }
         }
+
+        return true;
     },
 
     description: function(input) {
         if (input === '') {
             return InputValidator.ERR_DESCRIPTION_BLANK;
         }
+
+        return true;
     }
 
 }
