@@ -56,4 +56,4 @@ This project is maintained by these people and a bunch of awesome [contributors]
 
 ## License
 
-[MIT License](http://zenorocha.mit-license.org/) © Zeno Rocha
+[MIT License](http://webcomponentsorg.mit-license.org/) © WebComponents.org
