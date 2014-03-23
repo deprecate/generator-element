@@ -4,8 +4,10 @@ var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
+var validator = require('./validator');
 
 var ElementGenerator = yeoman.generators.Base.extend({
+
     init: function () {
         this.pkg = yeoman.file.readJSON(path.join(__dirname, '../package.json'));
 
@@ -25,11 +27,11 @@ var ElementGenerator = yeoman.generators.Base.extend({
         var prompts = [{
             name: 'elementName',
             message: 'What\'s the name of your element?',
-            validate: validateName
+            validate: validator.name
         }, {
             name: 'elementDescription',
             message: 'What\'s the description of your element?',
-            validate: validateDescription
+            validate: validator.description
         },
         {
             type: 'confirm',
@@ -66,34 +68,7 @@ var ElementGenerator = yeoman.generators.Base.extend({
         this.copy('editorconfig', '.editorconfig');
         this.copy('gitignore', '.gitignore');
     }
+
 });
-
-// Custom Elements Spec: Naming Rules
-// http://www.w3.org/TR/custom-elements/#concepts
-function validateName (input) {
-    var blacklist = [
-        'annotation-xml', 'color-profile', 'font-face', 'font-face-src',
-        'font-face-uri', 'font-face-format', 'font-face-name', 'missing-glyph'
-    ];
-
-    if (input === '') {
-        return 'Please fill your element name, for example: "my-element".';
-    }
-    else if (input.indexOf('-') === -1) {
-        return 'According to the spec, all elements must contain a dash on its name, for example: "my-element".';
-    }
-
-    for (var i = 0; i < blacklist.length; i++) {
-        if (input === blacklist[i]) {
-            return 'According to the spec, this element name is not allowed.';
-        }
-    }
-}
-
-function validateDescription (input) {
-    if (input === '') {
-        return 'Please fill your element description, for example: "My awesome Web Component using Polymer".';
-    }
-}
 
 module.exports = ElementGenerator;
