@@ -10,7 +10,17 @@
 
     <script>
         Polymer('<%= elementName %>', {
-            name: 'World'
+            name: 'World'<% if (lifecycle) { %>,
+            // element is fully prepared
+            ready: function() { },
+            // instance of the element is created
+            created: function() { },
+            // instance was inserted into the document
+            enteredView: function() { },
+            // instance was removed from the document
+            leftView: function() { },
+            // attribute added, removed or updated
+            attributeChanged: function(attrName, oldVal, newVal) { }<% } %>
         });
     </script>
 

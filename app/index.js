@@ -28,11 +28,18 @@ var ElementGenerator = yeoman.generators.Base.extend({
         }, {
             name: 'elementDescription',
             message: 'What\'s the description of your element?'
+        },
+        {
+            type: 'confirm',
+            name: 'lifecycle',
+            message: 'Do you want to include lifecycle callbacks?',
+            default: false
         }];
 
         this.prompt(prompts, function (props) {
             this.elementName = this._.slugify(props.elementName);
             this.elementDescription = props.elementDescription;
+            this.lifecycle = props.lifecycle;
 
             // according to the spec, all elements must contain a dash on its name
             if (this.elementName.indexOf('-') === -1) {
