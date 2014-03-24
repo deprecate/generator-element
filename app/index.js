@@ -46,14 +46,10 @@ var ElementGenerator = yeoman.generators.Base.extend({
             message: 'Do you want to include lifecycle callbacks?',
             default: false
         }, {
-            type: 'checkbox',
+            type: 'confirm',
             name: 'grunt',
-            message: 'What Grunt tasks do you want to include?',
-            choices: [{
-                name: 'Connect - to run a local web server (good for tests)',
-                value: 'connect',
-                checked: true
-            }]
+            message: 'Do you want to include Grunt tasks?',
+            default: true
         }];
 
         this.prompt(prompts, function (props) {
@@ -76,7 +72,7 @@ var ElementGenerator = yeoman.generators.Base.extend({
     element: function () {
         this.mkdir('src');
 
-        if (this.grunt.length !== 0) {
+        if (this.grunt) {
             this.copy('gitignore', '.gitignore');
             this.copy('_Gruntfile.js', 'Gruntfile.js');
         }

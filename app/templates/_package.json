@@ -10,11 +10,10 @@
     },
     "bugs": {
         "url": "https://github.com/<%= githubUser %>/<%= githubRepo %>/issues"
-    }<% if (grunt.length !== 0) { %>,
+    }<% if (grunt) { %>,
     "devDependencies": {
         "grunt": "~0.4.1",
         "grunt-contrib-connect": "~0.5.0",
         "grunt-cli": "~0.1.9"
-    }
-    <% } %>
+    }<% } %>
 }

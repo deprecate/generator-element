@@ -37,7 +37,45 @@ describe('element generator', function () {
         ];
 
         helpers.mockPrompt(this.app, {
-            'elementName': 'my-element'
+            'elementName': 'my-element',
+            'elementDescription': 'My awesome Web Component using Polymer',
+            'githubUser': 'zenorocha',
+            'githubRepo': 'my-element',
+            'lifecycle': false,
+            'grunt': true
+        });
+
+        this.app.options['skip-install'] = true;
+
+        this.app.run({}, function () {
+            helpers.assertFile(expected);
+            done();
+        });
+    });
+
+    it('creates expected files when there\'s no grunt tasks included', function (done) {
+        var expected = [
+            // dotfiles
+            '.bowerrc',
+            '.editorconfig',
+
+            // element
+            'index.html',
+            'README.md',
+            'src/my-element.html',
+
+            // app
+            'bower.json',
+            'package.json'
+        ];
+
+        helpers.mockPrompt(this.app, {
+            'elementName': 'my-element',
+            'elementDescription': 'My awesome Web Component using Polymer',
+            'githubUser': 'zenorocha',
+            'githubRepo': 'my-element',
+            'lifecycle': false,
+            'grunt': false
         });
 
         this.app.options['skip-install'] = true;
