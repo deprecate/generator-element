@@ -30,7 +30,7 @@ var ElementGenerator = yeoman.generators.Base.extend({
             validate: validator.name
         }, {
             name: 'elementDescription',
-            message: 'What\'s the description of your element?',
+            message: 'How would you describe the element?',
             validate: validator.description
         }, {
             name: 'githubUser',
@@ -38,7 +38,7 @@ var ElementGenerator = yeoman.generators.Base.extend({
             validate: validator.githubUser
         }, {
             name: 'githubRepo',
-            message: 'What\'s the repository name?',
+            message: 'What\'s the GitHub repository?',
             validate: validator.githubRepo
         }, {
             type: 'confirm',
