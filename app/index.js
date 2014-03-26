@@ -3,8 +3,8 @@
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
-var chalk = require('chalk');
 var validator = require('./validator');
+var banner = require('./banner');
 
 var ElementGenerator = yeoman.generators.Base.extend({
 
@@ -22,7 +22,7 @@ var ElementGenerator = yeoman.generators.Base.extend({
     askFor: function () {
         var done = this.async();
 
-        console.log(chalk.magenta('\nCustom Element generator brought to you by WebComponents.org\n'));
+        console.log(banner);
 
         var prompts = [{
             name: 'elementName',
