@@ -19,8 +19,9 @@
         "yeoman-generator"
     ],
     "dependencies": {
-        "yeoman-generator": "~0.16.0",
-        "chalk": "~0.4.0"
+        "chalk": "~0.4.0",
+        "validate-element-name": "~0.1.0",
+        "yeoman-generator": "~0.16.0"
     },
     "devDependencies": {
         "mocha": "*"
