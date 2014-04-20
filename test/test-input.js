@@ -36,4 +36,20 @@ describe('input validation', function () {
             assert.equal(actual, expected);
         });
     });
+
+    describe('github user', function () {
+        it('cannot be blank', function () {
+            var actual = validator.githubUser(''),
+                expected = validator.ERR_GITHUB_USER_BLANK;
+
+            assert.equal(actual, expected);
+        });
+
+        it('is valid', function () {
+            var actual = validator.githubUser('webcomponents'),
+                expected = true;
+
+            assert.equal(actual, expected);
+        });
+    });
 });
