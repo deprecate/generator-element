@@ -11,10 +11,10 @@ var InputValidator = {
     ERR_BOWER_PKG_EXISTS : 'This name represents your package and it already exists on Bower. Please try another one.',
 
     name: function (input) {
-        try {
-            elementNameValidator(input);
-        } catch (err) {
-            return err.message;
+        var result = elementNameValidator(input);
+
+        if (!result.isValid) {
+            return result.message;
         }
 
         return true;

@@ -6,13 +6,6 @@ var validator = require('../app/validator');
 
 describe('input validation', function () {
     describe('element name', function () {
-        it('cannot be blank', function () {
-            var actual = validator.name(''),
-                expected = 'Missing element name';
-
-            assert.equal(actual, expected);
-        });
-
         it('is valid', function () {
             var actual = validator.name('my-element'),
                 expected = true;
