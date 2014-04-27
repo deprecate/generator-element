@@ -8,7 +8,7 @@
     },
     "license": "MIT",
     "repository": "webcomponents/generator-element",
-    "main": "app/index.js",
+    "main": "elements/index.js",
     "engines": {
         "node": ">=0.10.0"
     },

@@ -1,30 +1,67 @@
-# Yeoman Generator<br> for Web Components<br> [![Build Status](https://secure.travis-ci.org/webcomponents/generator-element.svg?branch=master)](https://travis-ci.org/webcomponents/generator-element) [![NPM version](https://badge.fury.io/js/generator-element.svg)](http://badge.fury.io/js/generator-element) [![Dependency Status](https://david-dm.org/webcomponents/generator-element.svg?theme=shields.io)](https://david-dm.org/webcomponents/generator-element)
+# Yeoman Generator<br> for Custom Elements<br> [![Build Status](https://secure.travis-ci.org/webcomponents/generator-element.svg?branch=master)](https://travis-ci.org/webcomponents/generator-element) [![NPM version](https://badge.fury.io/js/generator-element.svg)](http://badge.fury.io/js/generator-element) [![Dependency Status](https://david-dm.org/webcomponents/generator-element.svg?theme=shields.io)](https://david-dm.org/webcomponents/generator-element)
 
 ![WC + Yeoman](http://f.cl.ly/items/0Z0Q180C0F0a1h0y3v2S/yo.jpg)
 
-> A Yeoman Generator that provides a [functional boilerplate](https://github.com/webcomponents/element-boilerplate) to easily create Web Component elements using [Polymer](http://www.polymer-project.org/).
+> A Yeoman Generator that provides a functional boilerplate to easily create Custom Elements using [Polymer](http://www.polymer-project.org/), [X-Tag](http://x-tags.org/) or [VanillaJS](http://vanilla-js.com/).
 
-## Getting started
+> All templates are based in the boilerplates authored by the [WebComponent.org team](https://github.com/webcomponents/):
 
-1. Install using NPM:
+> * [Polymer Boilerplate](https://github.com/webcomponents/polymer-boilerplate)
+> * [X-Tag Boilerplate](https://github.com/webcomponents/x-tag-boilerplate)
+> * [VanillaJS Boilerplate](https://github.com/webcomponents/element-boilerplate)
 
-    ```sh
-    $ [sudo] npm install -g generator-element
-    ```
+## Install
 
-2. Scaffold your new project:
+Install this generator using NPM:
 
-    ```sh
-    $ yo element
-    ```
-
-3. Start writing your custom element!
-
-## Structure
-
-The basic structure of the project is given in the following way.
-
+```sh
+$ [sudo] npm install -g generator-element
 ```
+
+## Getting Started
+
+![ScreenShot](http://f.cl.ly/items/212D0e213K2T0z3m2T0L/ss.png)
+
+There are two different generators available.
+
+* The first one used to scaffold out new **individual elements**:
+
+    ```sh
+$ yo element:elements
+    ```
+
+    ```
+[?] What do you want to use?
+[?] What's the name of your element?
+[?] Do you want to include lifecycle callbacks?
+    ```
+
+    Which will generate the following file:
+
+    ```
+.
+└── my-element.html
+    ```
+
+* The second one is used to scaffold an **entire project**:
+
+    ```sh
+$ yo element:app
+    ```
+
+    ```
+[?] What do you want to use?
+[?] What's the GitHub repository?
+[?] What's your GitHub username?
+[?] What's the name of your element?
+[?] How would you describe the element?
+[?] Do you want to include lifecycle callbacks?
+[?] Do you want to include some useful Grunt tasks?
+    ```
+
+    Which will generate the following project structure:
+
+    ```
 .
 ├── .editorconfig
 ├── .gitignore
@@ -33,7 +70,19 @@ The basic structure of the project is given in the following way.
 ├── index.html
 ├── Gruntfile.js
 └── src/my-element.html
-```
+    ```
+
+    And run `bower install` & `npm install` for you to fetch all dependencies.
+
+> ***Note:** files will be generated in the current directory, so be sure to change to a new directory before running those commands if you don't want to overwrite existing files.*
+
+## Contributing
+
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
 
 ## History
 

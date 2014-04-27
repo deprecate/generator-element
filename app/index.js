@@ -1,14 +1,13 @@
 'use strict';
 
+var banner = require('../banner');
 var util = require('util');
-var path = require('path');
 var yeoman = require('yeoman-generator');
-var banner = require('./banner');
 
-var ElementGenerator = yeoman.generators.Base.extend({
+var AppGenerator = yeoman.generators.Base.extend({
 
     init: function () {
-        this.pkg = yeoman.file.readJSON(path.join(__dirname, '../package.json'));
+        console.log(banner);
 
         this.on('end', function () {
             if (!this.options['skip-install']) {
@@ -23,8 +22,6 @@ var ElementGenerator = yeoman.generators.Base.extend({
 
     askFor: function () {
         var done = this.async();
-
-        console.log(banner);
 
         var prompts = [{
             type: 'list',
@@ -72,7 +69,7 @@ var ElementGenerator = yeoman.generators.Base.extend({
         }.bind(this));
     },
 
-    app: function () {
+    files: function () {
         this.copy('_bower.json', 'bower.json');
         this.copy('_index.html', 'index.html');
         this.copy('_README.md', 'README.md');
@@ -90,17 +87,17 @@ var ElementGenerator = yeoman.generators.Base.extend({
         var solutionFile = '';
 
         if (this.solution == 'Polymer') {
-            solutionFile = 'src/_polymer.html';
+            solutionFile = '../../elements/templates/_polymer.html';
         }
         else if (this.solution == 'X-Tag') {
-            solutionFile = 'src/_xtag.html';
+            solutionFile = '../../elements/templates/_xtag.html';
         }
         else if (this.solution == 'VanillaJS') {
-            solutionFile = 'src/_vanillajs.html';
+            solutionFile = '../../elements/templates/_vanillajs.html';
         }
 
         this.copy(solutionFile, 'src/' + this.elementName + '.html');
     }
 });
 
-module.exports = ElementGenerator;
+module.exports = AppGenerator;
