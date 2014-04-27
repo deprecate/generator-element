@@ -26,7 +26,6 @@ The basic structure of the project is given in the following way.
 
 ```
 .
-├── .bowerrc
 ├── .editorconfig
 ├── .gitignore
 ├── bower.json

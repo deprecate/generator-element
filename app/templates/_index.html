@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>&lt;<%= elementName %>&gt;</title>
+    <title>&lt;<%= githubRepo %>&gt;</title>
 
     <!-- Importing Web Component's Polyfill -->
-    <script src="lib/platform/platform.js"></script>
+    <script src="bower_components/platform/platform.js"></script>
 
     <!-- Importing Custom Elements -->
     <link rel="import" href="src/<%= elementName %>.html">
@@ -13,7 +13,7 @@
 <body>
 
     <!-- Using Custom Elements -->
-    <<%= elementName %> name="Zeno"></<%= elementName %>>
+    <<%= elementName %>></<%= elementName %>>
 
 </body>
 </html>

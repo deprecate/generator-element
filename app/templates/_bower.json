@@ -1,12 +1,9 @@
 {
-    "name": "<%= elementName %>",
+    "name": "<%= githubRepo %>",
     "version": "0.0.0",
     "description": "<%= elementDescription %>",
-    "authors": [
-        "TODO: Write your name"
-    ],
     "license": "MIT",
-    "main": "src/<%= elementName %>.html",
+    "main": "dist/<%= elementName %>.html",
     "keywords": [
         "polymer",
         "web-components"
@@ -17,7 +14,6 @@
         "bower_components"
     ],
     "dependencies": {
-        "platform": "Polymer/platform#~0.2.0",
-        "polymer": "Polymer/polymer#~0.2.0"
+        "polymer": "Polymer/polymer#~0.2.3"
     }
 }

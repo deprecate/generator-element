@@ -20,28 +20,22 @@ describe('element generator', function () {
 
     it('creates expected files', function (done) {
         var expected = [
-            // dotfiles
-            '.bowerrc',
             '.editorconfig',
             '.gitignore',
-
-            // element
+            'bower.json',
+            'package.json',
             'index.html',
             'Gruntfile.js',
             'README.md',
-            'src/my-element.html',
-
-            // app
-            'bower.json',
-            'package.json'
+            'src/my-element.html'
         ];
 
         helpers.mockPrompt(this.app, {
+            'githubRepo': 'my-user',
+            'githubUser': 'my-repo',
             'elementName': 'my-element',
-            'elementDescription': 'My awesome Web Component using Polymer',
-            'githubUser': 'zenorocha',
-            'githubRepo': 'my-element',
-            'lifecycle': false,
+            'elementDescription': 'My awesome Custom Element',
+            'lifecycle': true,
             'grunt': true
         });
 
@@ -55,25 +49,19 @@ describe('element generator', function () {
 
     it('creates expected files when there\'s no grunt tasks included', function (done) {
         var expected = [
-            // dotfiles
-            '.bowerrc',
             '.editorconfig',
-
-            // element
+            '.gitignore',
+            'bower.json',
             'index.html',
             'README.md',
-            'src/my-element.html',
-
-            // app
-            'bower.json',
-            'package.json'
+            'src/my-element.html'
         ];
 
         helpers.mockPrompt(this.app, {
+            'githubRepo': 'my-user',
+            'githubUser': 'my-repo',
             'elementName': 'my-element',
-            'elementDescription': 'My awesome Web Component using Polymer',
-            'githubUser': 'zenorocha',
-            'githubRepo': 'my-element',
+            'elementDescription': 'My awesome Custom Element',
             'lifecycle': false,
             'grunt': false
         });

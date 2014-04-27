@@ -1,4 +1,4 @@
-# &lt;<%= elementName %>&gt;
+# &lt;<%= githubRepo %>&gt;
 
 > <%= elementDescription %>
 
@@ -6,18 +6,28 @@
 
 [Check it live!](http://<%= githubUser %>.github.io/<%= githubRepo %>)
 
+## Install
+
+Install the component using [Bower](http://bower.io/):
+
+```sh
+$ bower install <%= githubRepo %> --save
+```
+
+Or [download as ZIP](https://github.com/<%= githubUser %>/<%= githubRepo %>/archive/master.zip).
+
 ## Usage
 
 1. Import Web Components' polyfill:
 
     ```html
-    <script src="lib/platform/platform.js"></script>
+    <script src="bower_components/platform/platform.js"></script>
     ```
 
 2. Import Custom Element:
 
     ```html
-    <link rel="import" href="src/<%= elementName %>.html">
+    <link rel="import" href="bower_components/<%= githubRepo %>/dist/<%= elementName %>.html">
     ```
 
 3. Start using it!
@@ -28,34 +38,57 @@
 
 ## Options
 
-Attribute  | Options                   | Default             | Description
----        | ---                       | ---                 | ---
-`name`     | *string*                  | `World`             | Lorem ipsum
+Attribute     | Options     | Default      | Description
+---           | ---         | ---          | ---
+`foo`         | *string*    | `bar`        | Lorem ipsum dolor.
 
-<% if (grunt) { %>## Setup
+## Methods
 
-In order to run it locally you'll need a basic server setup.
+Method        | Parameters   | Returns     | Description
+---           | ---          | ---         | ---
+`unicorn()`   | None.        | Nothing.    | Magic stuff appears.
 
-1. Install [NodeJS](http://nodejs.org/download/).
-2. Install [GruntJS](http://gruntjs.com/):
+## Events
+
+Event         | Description
+---           | ---
+`onsomething` | Triggers when something happens.
+
+<% if (grunt) { %>## Development
+
+In order to run it locally you'll need to fetch some dependencies and a basic server setup.
+
+* Install [Bower](http://bower.io/) & [Grunt](http://gruntjs.com/):
 
     ```sh
-    $ [sudo] npm install -g grunt-cli
+    $ [sudo] npm install -g bower grunt-cli
     ```
 
-3. Install local dependencies:
+* Install local dependencies:
 
     ```sh
-    $ npm install
+    $ bower install && npm install
     ```
 
-4. Run a local server and open `http://localhost:8000`.
+* To test your project, start the development server and open `http://localhost:8000`.
 
     ```sh
-    $ grunt connect
-    ```<% } %>
+    $ grunt server
+    ```
 
-## Contributing
+* To build the distribution files before releasing a new version.
+
+    ```sh
+    $ grunt build
+    ```
+
+* To provide a live demo, send everything to `gh-pages` branch.
+
+    ```sh
+    $ grunt deploy
+    ```
+
+<% } %>## Contributing
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`

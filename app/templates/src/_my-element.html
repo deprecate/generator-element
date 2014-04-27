@@ -1,26 +1,22 @@
 <!-- Import Polymer -->
-<link rel="import" href="../lib/polymer/polymer.html">
+<link rel="import" href="../bower_components/polymer/polymer.html">
 
 <!-- Define your custom element -->
-<polymer-element name="<%= elementName %>" attributes="name">
-
-    <template>
-        <p>Hello <strong>{{name}}</strong></p>
-    </template>
+<polymer-element name="<%= elementName %>">
 
     <script>
-        Polymer('<%= elementName %>', {
-            name: 'World'<% if (lifecycle) { %>,
-            // element is fully prepared
-            ready: function() { },
-            // instance of the element is created
-            created: function() { },
-            // instance was inserted into the document
-            enteredView: function() { },
-            // instance was removed from the document
-            leftView: function() { },
-            // attribute added, removed or updated
-            attributeChanged: function(attrName, oldVal, newVal) { }<% } %>
+        Polymer('<%= elementName %>', {<% if (lifecycle) { %>
+            // Fires when the "<polymer-element>" has been fully prepared
+            ready: function() {},
+
+            // Fires when the element was inserted into the document
+            attached: function() {},
+
+            // Fires when the element was removed from the document
+            detached: function() {},
+
+            // Fires when an attribute was added, removed, or updated
+            attributeChanged: function(attr, oldVal, newVal) {}<% } %>
         });
     </script>
 

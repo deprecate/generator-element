@@ -1,19 +1,10 @@
 {
-    "name": "<%= elementName %>",
-    "version": "0.0.0",
-    "description": "<%= elementDescription %>",
-    "author": "TODO: Write your name",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/<%= githubUser %>/<%= githubRepo %>"
-    },
-    "bugs": {
-        "url": "https://github.com/<%= githubUser %>/<%= githubRepo %>/issues"
-    }<% if (grunt) { %>,
+    "private": true,
     "devDependencies": {
         "grunt": "~0.4.1",
+        "grunt-cli": "~0.1.9",
         "grunt-contrib-connect": "~0.5.0",
-        "grunt-cli": "~0.1.9"
-    }<% } %>
+        "grunt-gh-pages": "~0.9.1",
+        "grunt-text-replace": "~0.3.11"
+    }
 }
