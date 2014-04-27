@@ -54,7 +54,7 @@ Event         | Description
 ---           | ---
 `onsomething` | Triggers when something happens.
 
-<% if (grunt) { %>## Development
+## Development<% if (grunt) { %>
 
 In order to run it locally you'll need to fetch some dependencies and a basic server setup.
 
@@ -86,9 +86,23 @@ In order to run it locally you'll need to fetch some dependencies and a basic se
 
     ```sh
     $ grunt deploy
+    ```<% } else { %>
+
+In order to run it locally you'll need to fetch some dependencies.
+
+* Install [Bower](http://bower.io/):
+
+    ```sh
+    $ [sudo] npm install -g bower
     ```
 
-<% } %>## Contributing
+* Install local dependencies:
+
+    ```sh
+    $ bower install
+    ```<% } %>
+
+## Contributing
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
