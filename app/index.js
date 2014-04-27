@@ -13,7 +13,10 @@ var ElementGenerator = yeoman.generators.Base.extend({
         this.on('end', function () {
             if (!this.options['skip-install']) {
                 this.bowerInstall();
-                this.npmInstall();
+
+                if (this.grunt) {
+                    this.npmInstall();
+                }
             }
         });
     },
