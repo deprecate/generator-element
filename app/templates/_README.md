@@ -26,8 +26,9 @@ Or [download as ZIP](https://github.com/<%= githubUser %>/<%= githubRepo %>/arch
 
 2. Import Custom Element:
 
-    ```html
-    <link rel="import" href="bower_components/<%= githubRepo %>/dist/<%= elementName %>.html">
+    ```html<% if (solution == 'VanillaJS') { %>
+    <link rel="import" href="bower_components/<%= githubRepo %>/src/<%= elementName %>.html"><% } else { %>
+    <link rel="import" href="bower_components/<%= githubRepo %>/dist/<%= elementName %>.html"><% } %>
     ```
 
 3. Start using it!
@@ -74,13 +75,13 @@ In order to run it locally you'll need to fetch some dependencies and a basic se
 
     ```sh
     $ grunt server
-    ```
+    ```<% if (solution != 'VanillaJS') { %>
 
 * To build the distribution files before releasing a new version.
 
     ```sh
     $ grunt build
-    ```
+    ```<% } %>
 
 * To provide a live demo, send everything to `gh-pages` branch.
 

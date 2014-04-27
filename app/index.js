@@ -27,6 +27,11 @@ var ElementGenerator = yeoman.generators.Base.extend({
         console.log(banner);
 
         var prompts = [{
+            type: 'list',
+            name: 'solution',
+            message: 'What do you want to use?',
+            choices: ['Polymer', 'X-Tag', 'VanillaJS']
+        }, {
             name: 'githubRepo',
             message: 'What\'s the GitHub repository?',
             default: 'my-repo'
@@ -55,6 +60,7 @@ var ElementGenerator = yeoman.generators.Base.extend({
         }];
 
         this.prompt(prompts, function (props) {
+            this.solution = props.solution;
             this.githubRepo = props.githubRepo;
             this.githubUser = props.githubUser;
             this.elementName = this._.slugify(props.elementName);
@@ -80,7 +86,20 @@ var ElementGenerator = yeoman.generators.Base.extend({
         this.copy('gitignore', '.gitignore');
 
         this.mkdir('src');
-        this.copy('src/_my-element.html', 'src/' + this.elementName + '.html');
+
+        var solutionFile = '';
+
+        if (this.solution == 'Polymer') {
+            solutionFile = 'src/_polymer.html';
+        }
+        else if (this.solution == 'X-Tag') {
+            solutionFile = 'src/_xtag.html';
+        }
+        else if (this.solution == 'VanillaJS') {
+            solutionFile = 'src/_vanillajs.html';
+        }
+
+        this.copy(solutionFile, 'src/' + this.elementName + '.html');
     }
 });
 

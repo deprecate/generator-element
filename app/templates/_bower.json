@@ -2,10 +2,12 @@
     "name": "<%= githubRepo %>",
     "version": "0.0.0",
     "description": "<%= elementDescription %>",
-    "license": "MIT",
-    "main": "dist/<%= elementName %>.html",
-    "keywords": [
-        "polymer",
+    "license": "MIT",<% if (solution == 'VanillaJS') { %>
+    "main": "src/<%= elementName %>.html",<% } else { %>
+    "main": "dist/<%= elementName %>.html",<% } %>
+    "keywords": [<% if (solution == 'Polymer') { %>
+        "polymer",<% } %><% if (solution == 'X-Tag') { %>
+        "x-tag",<% } %>
         "web-components"
     ],
     "ignore": [
@@ -13,7 +15,10 @@
         "node_modules",
         "bower_components"
     ],
-    "dependencies": {
-        "polymer": "Polymer/polymer#~0.2.3"
+    "dependencies": {<% if (solution == 'Polymer') { %>
+        "polymer": "Polymer/polymer#~0.2.3"<% } %><% if (solution == 'X-Tag') { %>
+        "platform": "Polymer/platform#~0.2.3",
+        "x-tag-core": "~0.9.5"<% } %><% if (solution == 'VanillaJS') { %>
+        "platform": "Polymer/platform#~0.2.3"<% } %>
     }
 }

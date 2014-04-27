@@ -35,12 +35,6 @@ The basic structure of the project is given in the following way.
 └── src/my-element.html
 ```
 
-## Roadmap
-
-- [✔] Scaffold an element using Polymer
-- [—] Scaffold an element using X-Tag
-- [—] Scaffold an element using VanillaJS
-
 ## History
 
 For detailed changelog, see [Releases](https://github.com/webcomponents/generator-element/releases).

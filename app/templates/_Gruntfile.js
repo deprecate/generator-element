@@ -18,7 +18,7 @@ module.exports = function(grunt) {
                 '!bower_components/<%= githubRepo %>/**/*',
                 'demo/*', 'src/*', 'index.html'
             ]
-        },
+        }<% if (solution != 'VanillaJS') { %>,
         'replace': {
             example: {
                 src: ['src/*'],
@@ -28,14 +28,14 @@ module.exports = function(grunt) {
                     to: '..'
                 }]
             }
-        }
+        }<% } %>
     });
 
     grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-gh-pages');
-    grunt.loadNpmTasks('grunt-text-replace');
-
-    grunt.registerTask('build',  ['replace']);
+    grunt.loadNpmTasks('grunt-gh-pages');<% if (solution != 'VanillaJS') { %>
+    grunt.loadNpmTasks('grunt-text-replace');<% } %>
+<% if (solution != 'VanillaJS') { %>
+    grunt.registerTask('build',  ['replace']);<% } %>
     grunt.registerTask('deploy', ['gh-pages']);
     grunt.registerTask('server', ['connect']);
 

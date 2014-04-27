@@ -1,0 +1,25 @@
+<!-- Import X-Tag -->
+<script src="../bower_components/x-tag-core/src/core.js"></script>
+
+<script>
+(function() {
+    xtag.register('<%= elementName %>', {<% if (lifecycle) { %>
+        lifecycle: {
+            // Fires when an instance of the element is created
+            created: function() {},
+
+            // Fires when an instance was inserted into the document
+            inserted: function() {},
+
+            // Fires when an instance was removed from the document
+            removed: function() {},
+
+            // Fires when an attribute was added, removed, or updated
+            attributeChanged: function(attr, oldVal, newVal) {}
+        },<% } %>
+        events: {},
+        accessors: {},
+        methods: {}
+    });
+}());
+</script>
