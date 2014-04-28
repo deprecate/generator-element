@@ -10,8 +10,8 @@ describe('element generator', function () {
                 return done(err);
             }
 
-            this.app = helpers.createGenerator('element:app', [
-                '../../app'
+            this.repo = helpers.createGenerator('element:repo', [
+                '../../repo'
             ]);
 
             done();
@@ -30,7 +30,7 @@ describe('element generator', function () {
             'src/my-element.html'
         ];
 
-        helpers.mockPrompt(this.app, {
+        helpers.mockPrompt(this.repo, {
             'githubRepo': 'my-user',
             'githubUser': 'my-repo',
             'elementName': 'my-element',
@@ -39,9 +39,9 @@ describe('element generator', function () {
             'grunt': true
         });
 
-        this.app.options['skip-install'] = true;
+        this.repo.options['skip-install'] = true;
 
-        this.app.run({}, function () {
+        this.repo.run({}, function () {
             helpers.assertFile(expected);
             done();
         });
@@ -57,7 +57,7 @@ describe('element generator', function () {
             'src/my-element.html'
         ];
 
-        helpers.mockPrompt(this.app, {
+        helpers.mockPrompt(this.repo, {
             'githubRepo': 'my-user',
             'githubUser': 'my-repo',
             'elementName': 'my-element',
@@ -66,9 +66,9 @@ describe('element generator', function () {
             'grunt': false
         });
 
-        this.app.options['skip-install'] = true;
+        this.repo.options['skip-install'] = true;
 
-        this.app.run({}, function () {
+        this.repo.run({}, function () {
             helpers.assertFile(expected);
             done();
         });

@@ -27,7 +27,7 @@ There are two different generators available.
 * The first one used to scaffold out new **individual elements**:
 
     ```sh
-$ yo element:elements
+$ yo element
     ```
 
     ```
@@ -46,7 +46,7 @@ $ yo element:elements
 * The second one is used to scaffold an **entire project**:
 
     ```sh
-$ yo element:app
+$ yo element:repo
     ```
 
     ```
@@ -74,7 +74,7 @@ $ yo element:app
 
     And run `bower install` & `npm install` for you to fetch all dependencies.
 
-> ***Note:** files will be generated in the current directory, so be sure to change to a new directory before running those commands if you don't want to overwrite existing files.*
+> _**Note**: files will be generated in the current directory, so be sure to change to a new directory before running those commands if you don't want to overwrite existing files._
 
 ## Contributing
 
