@@ -7,7 +7,9 @@ var yeoman = require('yeoman-generator');
 var RepoGenerator = yeoman.generators.Base.extend({
 
     init: function () {
-        console.log(banner);
+        if (!this.options['skip-install-message']) {
+            this.log(banner);
+        }
 
         this.on('end', function () {
             if (!this.options['skip-install']) {
