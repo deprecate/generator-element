@@ -1,12 +1,15 @@
 'use strict';
 
 var banner = require('../banner');
+var path = require('path');
 var util = require('util');
 var yeoman = require('yeoman-generator');
 
 var ElementGenerator = yeoman.generators.Base.extend({
 
     init: function () {
+        this.sourceRoot(path.join(__dirname, '../templates'));
+
         if (!this.options['skip-install-message']) {
             this.log(banner);
         }
@@ -44,13 +47,13 @@ var ElementGenerator = yeoman.generators.Base.extend({
         var solutionFile = '';
 
         if (this.solution == 'Polymer') {
-            solutionFile = '_polymer.html';
+            solutionFile = 'src/_polymer.html';
         }
         else if (this.solution == 'X-Tag') {
-            solutionFile = '_xtag.html';
+            solutionFile = 'src/_xtag.html';
         }
         else if (this.solution == 'VanillaJS') {
-            solutionFile = '_vanillajs.html';
+            solutionFile = 'src/_vanillajs.html';
         }
 
         this.copy(solutionFile, this.elementName + '.html');
