@@ -1,5 +1,7 @@
 /*global describe, beforeEach, it */
+
 'use strict';
+
 var path = require('path');
 var helpers = require('yeoman-generator').test;
 
@@ -10,8 +12,8 @@ describe('element generator', function () {
                 return done(err);
             }
 
-            this.repo = helpers.createGenerator('element:repo', [
-                '../../repo'
+            this.app = helpers.createGenerator('element:app', [
+                '../../app'
             ]);
 
             done();
@@ -20,55 +22,15 @@ describe('element generator', function () {
 
     it('creates expected files', function (done) {
         var expected = [
-            '.editorconfig',
-            '.gitignore',
-            'bower.json',
-            'package.json',
-            'index.html',
-            'Gruntfile.js',
-            'README.md',
-            'src/my-element.html'
+            'my-element.html'
         ];
 
-        helpers.mockPrompt(this.repo, {
-            'githubRepo': 'my-user',
-            'githubUser': 'my-repo',
-            'elementName': 'my-element',
-            'elementDescription': 'My awesome Custom Element',
-            'lifecycle': true,
-            'grunt': true
+        helpers.mockPrompt(this.app, {
+            'elementName': 'my-element'
         });
 
-        this.repo.options['skip-install'] = true;
-
-        this.repo.run({}, function () {
-            helpers.assertFile(expected);
-            done();
-        });
-    });
-
-    it('creates expected files when there\'s no grunt tasks included', function (done) {
-        var expected = [
-            '.editorconfig',
-            '.gitignore',
-            'bower.json',
-            'index.html',
-            'README.md',
-            'src/my-element.html'
-        ];
-
-        helpers.mockPrompt(this.repo, {
-            'githubRepo': 'my-user',
-            'githubUser': 'my-repo',
-            'elementName': 'my-element',
-            'elementDescription': 'My awesome Custom Element',
-            'lifecycle': false,
-            'grunt': false
-        });
-
-        this.repo.options['skip-install'] = true;
-
-        this.repo.run({}, function () {
+        this.app.options['skip-install'] = true;
+        this.app.run({}, function () {
             helpers.assertFile(expected);
             done();
         });
