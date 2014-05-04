@@ -1,4 +1,6 @@
-# Yeoman Generator<br> for Custom Elements<br> [![Build Status](https://secure.travis-ci.org/webcomponents/generator-element.svg?branch=master)](https://travis-ci.org/webcomponents/generator-element) [![NPM version](https://badge.fury.io/js/generator-element.svg)](http://badge.fury.io/js/generator-element) [![Dependency Status](https://david-dm.org/webcomponents/generator-element.svg?theme=shields.io)](https://david-dm.org/webcomponents/generator-element)
+# Yeoman Generator<br> for Custom Elements<br>
+
+[![NPM version](https://badge.fury.io/js/generator-element.svg)](http://badge.fury.io/js/generator-element) [![Build Status](https://secure.travis-ci.org/webcomponents/generator-element.svg?branch=master)](https://travis-ci.org/webcomponents/generator-element) [![Dependency Status](https://david-dm.org/webcomponents/generator-element.svg?theme=shields.io)](https://david-dm.org/webcomponents/generator-element)
 
 ![WC + Yeoman](http://f.cl.ly/items/0Z0Q180C0F0a1h0y3v2S/yo.jpg)
 
