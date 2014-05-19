@@ -1,9 +1,10 @@
 'use strict';
 
-var banner = require('../banner');
-var path = require('path');
-var util = require('util');
-var yeoman = require('yeoman-generator');
+var banner = require('../banner'),
+    path = require('path'),
+    util = require('util'),
+    yeoman = require('yeoman-generator');
+
 
 var RepoGenerator = yeoman.generators.Base.extend({
 
@@ -62,13 +63,11 @@ var RepoGenerator = yeoman.generators.Base.extend({
         }];
 
         this.prompt(prompts, function (props) {
-            this.solution = props.solution;
-            this.githubRepo = props.githubRepo;
-            this.githubUser = props.githubUser;
-            this.elementName = this._.slugify(props.elementName);
-            this.elementDescription = props.elementDescription;
-            this.lifecycle = props.lifecycle;
-            this.grunt = props.grunt;
+            props.elementName = this._.slugify(props.elementName);
+            for(var i = 0; i < prompts.length; i++) {
+                var name = prompts[i].name;
+                this[name] = props[name];
+            }
 
             done();
         }.bind(this));
