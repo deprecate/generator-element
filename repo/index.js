@@ -1,9 +1,10 @@
 'use strict';
 
-var banner = require('../banner');
-var path = require('path');
-var util = require('util');
-var yeoman = require('yeoman-generator');
+var banner = require('../banner'),
+    path = require('path'),
+    util = require('util'),
+    yeoman = require('yeoman-generator');
+
 
 var RepoGenerator = yeoman.generators.Base.extend({
 
@@ -62,13 +63,11 @@ var RepoGenerator = yeoman.generators.Base.extend({
         }];
 
         this.prompt(prompts, function (props) {
-            this.solution = props.solution;
-            this.githubRepo = props.githubRepo;
-            this.githubUser = props.githubUser;
-            this.elementName = this._.slugify(props.elementName);
-            this.elementDescription = props.elementDescription;
-            this.lifecycle = props.lifecycle;
-            this.grunt = props.grunt;
+            props.elementName = this._.slugify(props.elementName);
+            for(var i = 0; i < prompts.length; i++) {
+                var name = prompts[i].name;
+                this[name] = props[name];
+            }
 
             done();
         }.bind(this));
@@ -89,17 +88,11 @@ var RepoGenerator = yeoman.generators.Base.extend({
 
         this.mkdir('src');
 
-        var solutionFile = '';
-
-        if (this.solution == 'Polymer') {
-            solutionFile = 'src/_polymer.html';
-        }
-        else if (this.solution == 'X-Tag') {
-            solutionFile = 'src/_xtag.html';
-        }
-        else if (this.solution == 'VanillaJS') {
-            solutionFile = 'src/_vanillajs.html';
-        }
+        var solutionFile = {
+            'Polymer':'src/_polymer.html',
+            'X-Tag':'src/_xtag.html',
+            'VanillaJS':'src/_vanillajs.html'
+        }[this.solution];
 
         this.copy(solutionFile, 'src/' + this.elementName + '.html');
     }
