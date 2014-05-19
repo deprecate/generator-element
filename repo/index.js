@@ -89,17 +89,11 @@ var RepoGenerator = yeoman.generators.Base.extend({
 
         this.mkdir('src');
 
-        var solutionFile = '';
-
-        if (this.solution == 'Polymer') {
-            solutionFile = 'src/_polymer.html';
-        }
-        else if (this.solution == 'X-Tag') {
-            solutionFile = 'src/_xtag.html';
-        }
-        else if (this.solution == 'VanillaJS') {
-            solutionFile = 'src/_vanillajs.html';
-        }
+        var solutionFile = {
+            'Polymer':'src/_polymer.html',
+            'X-Tag':'src/_xtag.html',
+            'VanillaJS':'src/_vanillajs.html'
+        }[this.solution];
 
         this.copy(solutionFile, 'src/' + this.elementName + '.html');
     }
