@@ -35,9 +35,12 @@ var ElementGenerator = yeoman.generators.Base.extend({
         }];
 
         this.prompt(prompts, function (props) {
-            this.solution = props.solution;
-            this.elementName = this._.slugify(props.elementName);
-            this.lifecycle = props.lifecycle;
+            props.elementName = this._.slugify(props.elementName);
+
+            for (var i = 0; i < prompts.length; i++) {
+                var name = prompts[i].name;
+                this[name] = props[name];
+            }
 
             done();
         }.bind(this));
@@ -45,12 +48,12 @@ var ElementGenerator = yeoman.generators.Base.extend({
 
     files: function () {
         var solutionFile = {
-            'Polymer':'src/_polymer.html',
-            'X-Tag':'src/_xtag.html',
-            'VanillaJS':'src/_vanillajs.html'
-        }[this.solution];
+            'Polymer'  : 'src/_polymer.html',
+            'X-Tag'    : 'src/_xtag.html',
+            'VanillaJS': 'src/_vanillajs.html'
+        };
 
-        this.copy(solutionFile, this.elementName + '.html');
+        this.copy(solutionFile[this.solution], this.elementName + '.html');
     }
 });
 

@@ -62,13 +62,12 @@ var RepoGenerator = yeoman.generators.Base.extend({
         }];
 
         this.prompt(prompts, function (props) {
-            this.solution = props.solution;
-            this.githubRepo = props.githubRepo;
-            this.githubUser = props.githubUser;
-            this.elementName = this._.slugify(props.elementName);
-            this.elementDescription = props.elementDescription;
-            this.lifecycle = props.lifecycle;
-            this.grunt = props.grunt;
+            props.elementName = this._.slugify(props.elementName);
+
+            for (var i = 0; i < prompts.length; i++) {
+                var name = prompts[i].name;
+                this[name] = props[name];
+            }
 
             done();
         }.bind(this));
@@ -90,12 +89,12 @@ var RepoGenerator = yeoman.generators.Base.extend({
         this.mkdir('src');
 
         var solutionFile = {
-            'Polymer':'src/_polymer.html',
-            'X-Tag':'src/_xtag.html',
-            'VanillaJS':'src/_vanillajs.html'
-        }[this.solution];
+            'Polymer'  : 'src/_polymer.html',
+            'X-Tag'    : 'src/_xtag.html',
+            'VanillaJS': 'src/_vanillajs.html'
+        };
 
-        this.copy(solutionFile, 'src/' + this.elementName + '.html');
+        this.copy(solutionFile[this.solution], 'src/' + this.elementName + '.html');
     }
 });
 
