@@ -2,6 +2,7 @@
 
 var banner = require('../banner');
 var path = require('path');
+var pkgNameValidator = require('pkg-name');
 var util = require('util');
 var yeoman = require('yeoman-generator');
 var elementNameValidator = require('validate-element-name');
@@ -26,7 +27,7 @@ var RepoGenerator = yeoman.generators.Base.extend({
         });
     },
 
-    askFor: function () {
+    askForSolution: function () {
         var done = this.async();
         var log = this.log;
 
@@ -35,10 +36,38 @@ var RepoGenerator = yeoman.generators.Base.extend({
             name: 'solution',
             message: 'What do you want to use?',
             choices: ['Polymer', 'X-Tag', 'VanillaJS']
-        }, {
+        }];
+
+        this.prompt(prompts, function (props) {
+            this.solution = props.solution;
+
+            done();
+        }.bind(this));
+    },
+
+    askFor: function () {
+        var done = this.async();
+
+        var prompts = [{
             name: 'githubRepo',
             message: 'What\'s the GitHub repository?',
             default: 'my-repo'
+        }, {
+            type: 'confirm',
+            name: 'pkgName',
+            message: 'The name above already exists on Bower, choose another?',
+            default: true,
+            when: function(answers) {
+                var done = this.async();
+
+                pkgNameValidator(answers.githubRepo, function (err, available) {
+                    if (!available.bower) {
+                        done(true);
+                    }
+
+                    done(false);
+                });
+            }
         }, {
             name: 'githubUser',
             message: 'What\'s your GitHub username?',
@@ -77,7 +106,9 @@ var RepoGenerator = yeoman.generators.Base.extend({
         }];
 
         this.prompt(prompts, function (props) {
-            props.elementName = this._.slugify(props.elementName);
+            if (props.pkgName) {
+                return this.askFor();
+            }
 
             for (var i = 0; i < prompts.length; i++) {
                 var name = prompts[i].name;
