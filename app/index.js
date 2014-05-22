@@ -4,6 +4,7 @@ var banner = require('../banner');
 var path = require('path');
 var util = require('util');
 var yeoman = require('yeoman-generator');
+var elementNameValidator = require('validate-element-name');
 
 var ElementGenerator = yeoman.generators.Base.extend({
 
@@ -17,6 +18,7 @@ var ElementGenerator = yeoman.generators.Base.extend({
 
     askFor: function () {
         var done = this.async();
+        var log = this.log;
 
         var prompts = [{
             type: 'list',
@@ -26,7 +28,20 @@ var ElementGenerator = yeoman.generators.Base.extend({
         }, {
             name: 'elementName',
             message: 'What\'s the name of your element?',
-            default: 'my-element'
+            default: 'my-element',
+            validate: function (input) {
+                var result = elementNameValidator(input);
+
+                if (!result.isValid) {
+                    return result.message;
+                }
+
+                if (result.message) {
+                    log.info(result.message);
+                }
+
+                return true;
+            }
         }, {
             type: 'confirm',
             name: 'lifecycle',
@@ -35,8 +50,6 @@ var ElementGenerator = yeoman.generators.Base.extend({
         }];
 
         this.prompt(prompts, function (props) {
-            props.elementName = this._.slugify(props.elementName);
-
             for (var i = 0; i < prompts.length; i++) {
                 var name = prompts[i].name;
                 this[name] = props[name];
