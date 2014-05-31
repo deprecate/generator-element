@@ -47,6 +47,7 @@ var RepoGenerator = yeoman.generators.Base.extend({
 
     askFor: function () {
         var done = this.async();
+        var log = this.log;
 
         var prompts = [{
             name: 'githubRepo',
