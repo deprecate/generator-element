@@ -2,7 +2,7 @@
 
 [![NPM version](https://badge.fury.io/js/generator-element.svg)](http://badge.fury.io/js/generator-element) [![Build Status](https://secure.travis-ci.org/webcomponents/generator-element.svg?branch=master)](https://travis-ci.org/webcomponents/generator-element) [![Dependency Status](https://david-dm.org/webcomponents/generator-element.svg?theme=shields.io)](https://david-dm.org/webcomponents/generator-element)
 
-![WC + Yeoman](http://f.cl.ly/items/0Z0Q180C0F0a1h0y3v2S/yo.jpg)
+![WC + Yeoman](https://cloud.githubusercontent.com/assets/398893/3528278/c3c2eae6-078d-11e4-88c5-7a853d7a5757.jpg)
 
 > A Yeoman Generator that provides a functional boilerplate to easily create Custom Elements using [Polymer](http://www.polymer-project.org/), [X-Tag](http://x-tags.org/) or [VanillaJS](http://vanilla-js.com/).
 
@@ -22,7 +22,7 @@ $ [sudo] npm install -g generator-element
 
 ## Getting Started
 
-![ScreenShot](http://f.cl.ly/items/212D0e213K2T0z3m2T0L/ss.png)
+![ScreenShot](https://cloud.githubusercontent.com/assets/398893/3528261/a8bdefb6-078d-11e4-900d-b6d4df3ead79.png)
 
 There are two different generators available.
 
