@@ -27,19 +27,19 @@ var RepoGenerator = yeoman.generators.Base.extend({
         });
     },
 
-    askForSolution: function () {
+    askForBoilerplate: function () {
         var done = this.async();
         var log = this.log;
 
         var prompts = [{
             type: 'list',
-            name: 'solution',
+            name: 'boilerplate',
             message: 'What do you want to use?',
             choices: ['Polymer', 'X-Tag', 'VanillaJS']
         }];
 
         this.prompt(prompts, function (props) {
-            this.solution = props.solution;
+            this.boilerplate = props.boilerplate;
 
             done();
         }.bind(this));
@@ -135,13 +135,13 @@ var RepoGenerator = yeoman.generators.Base.extend({
 
         this.mkdir('src');
 
-        var solutionFile = {
+        var boilerplateFile = {
             'Polymer'  : 'src/_polymer.html',
             'X-Tag'    : 'src/_xtag.html',
             'VanillaJS': 'src/_vanillajs.html'
         };
 
-        this.copy(solutionFile[this.solution], 'src/' + this.elementName + '.html');
+        this.copy(boilerplateFile[this.boilerplate], 'src/' + this.elementName + '.html');
     }
 });
 

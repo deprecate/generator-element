@@ -22,7 +22,7 @@ var ElementGenerator = yeoman.generators.Base.extend({
 
         var prompts = [{
             type: 'list',
-            name: 'solution',
+            name: 'boilerplate',
             message: 'What do you want to use?',
             choices: ['Polymer', 'X-Tag', 'VanillaJS']
         }, {
@@ -60,13 +60,13 @@ var ElementGenerator = yeoman.generators.Base.extend({
     },
 
     files: function () {
-        var solutionFile = {
+        var boilerplateFile = {
             'Polymer'  : 'src/_polymer.html',
             'X-Tag'    : 'src/_xtag.html',
             'VanillaJS': 'src/_vanillajs.html'
         };
 
-        this.copy(solutionFile[this.solution], this.elementName + '.html');
+        this.copy(boilerplateFile[this.boilerplate], this.elementName + '.html');
     }
 });
 
