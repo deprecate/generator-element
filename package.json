@@ -1,39 +1,39 @@
 {
-    "name": "generator-element",
-    "version": "0.1.7",
-    "description": "Yeoman generator to create Custom Elements using Polymer, X-Tag or VanillaJS",
-    "author": {
-        "name": "WebComponents.org",
-        "url": "https://github.com/webcomponents"
-    },
-    "license": "MIT",
-    "repository": "webcomponents/generator-element",
-    "main": "elements/index.js",
-    "engines": {
-        "node": ">=0.10.0"
-    },
-    "scripts": {
-        "test": "mocha --reporter spec"
-    },
-    "keywords": [
-        "yeoman-generator",
-        "custom-elements",
-        "web-components",
-        "webcomponents",
-        "polymer",
-        "x-tag",
-        "vanillajs"
-    ],
-    "dependencies": {
-        "chalk": "~0.4.0",
-        "pkg-name": "~0.1.0",
-        "validate-element-name": "~0.7.1",
-        "yeoman-generator": "~0.17.0"
-    },
-    "devDependencies": {
-        "mocha": "*"
-    },
-    "peerDependencies": {
-        "yo": ">=1.0.0"
-    }
+  "name": "generator-element",
+  "version": "0.1.7",
+  "description": "Yeoman generator to create Custom Elements using Polymer, X-Tag or VanillaJS",
+  "author": {
+    "name": "WebComponents.org",
+    "url": "https://github.com/webcomponents"
+  },
+  "license": "MIT",
+  "repository": "webcomponents/generator-element",
+  "main": "elements/index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "custom-elements",
+    "web-components",
+    "webcomponents",
+    "polymer",
+    "x-tag",
+    "vanillajs"
+  ],
+  "dependencies": {
+    "chalk": "^0.5.1",
+    "pkg-name": "~0.1.0",
+    "validate-element-name": "~0.7.1",
+    "yeoman-generator": "~0.17.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  }
 }
