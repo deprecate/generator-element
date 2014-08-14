@@ -26,9 +26,9 @@
   ],
   "dependencies": {
     "chalk": "^0.5.1",
-    "pkg-name": "~0.1.0",
-    "validate-element-name": "~0.7.1",
-    "yeoman-generator": "~0.17.0"
+    "pkg-name": "^1.0.0",
+    "validate-element-name": "^1.0.0",
+    "yeoman-generator": "^0.17.2"
   },
   "devDependencies": {
     "mocha": "*"
