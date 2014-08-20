@@ -26,7 +26,9 @@ describe('element generator', function () {
         ];
 
         helpers.mockPrompt(this.app, {
-            'elementName': 'my-element'
+            'boilerplate': 'Polymer',
+            'elementName': 'my-element',
+            'lifecycle': true
         });
 
         this.app.options['skip-install'] = true;
