@@ -9,7 +9,7 @@
 
 > A Yeoman Generator that provides a functional boilerplate to easily create Custom Elements using [Polymer](http://www.polymer-project.org/), [X-Tag](http://x-tags.org/) or [VanillaJS](http://vanilla-js.com/).
 
-> All templates are based in the boilerplates authored by the [WebComponent.org team](https://github.com/webcomponents/):
+> All templates are based in the boilerplates authored by the [WebComponents.org team](https://github.com/webcomponents/):
 
 > * [Polymer Boilerplate](https://github.com/webcomponents/polymer-boilerplate)
 > * [X-Tag Boilerplate](https://github.com/webcomponents/x-tag-boilerplate)
