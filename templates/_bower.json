@@ -17,8 +17,8 @@
     ],
     "dependencies": {<% if (boilerplate == 'Polymer') { %>
         "polymer": "Polymer/polymer#^0.5.0"<% } %><% if (boilerplate == 'X-Tag') { %>
-        "webcomponentsjs": "Polymer/webcomponentsjs#^0.5.0",
         "x-tag-core": "~0.9.7"<% } %><% if (boilerplate == 'VanillaJS') { %>
-        "webcomponentsjs": "Polymer/webcomponentsjs#^0.5.0"<% } %>
+        "webcomponentsjs": "^0.5.1",
+        "webcomponentsjs": "^0.5.1"<% } %>
     }
 }
