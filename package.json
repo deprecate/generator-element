@@ -1,6 +1,6 @@
 {
   "name": "generator-element",
-  "version": "0.1.7",
+  "version": "1.0.0",
   "description": "Yeoman generator to create Custom Elements using Polymer, X-Tag or VanillaJS",
   "author": {
     "name": "WebComponents.org",
