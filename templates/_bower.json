@@ -16,9 +16,9 @@
         "bower_components"
     ],
     "dependencies": {<% if (boilerplate == 'Polymer') { %>
-        "x-tag-core": "~0.9.7"<% } %><% if (boilerplate == 'VanillaJS') { %>
         "polymer": "Polymer/polymer#^0.5.1"<% } %><% if (boilerplate == 'X-Tag') { %>
         "webcomponentsjs": "^0.5.1",
+        "x-tag-core": "^1.0.0"<% } %><% if (boilerplate == 'VanillaJS') { %>
         "webcomponentsjs": "^0.5.1"<% } %>
     }
 }
