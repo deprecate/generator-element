@@ -25,10 +25,10 @@
     "vanillajs"
   ],
   "dependencies": {
-    "chalk": "^0.5.1",
+    "chalk": "^1.0.0",
     "pkg-name": "^1.0.0",
     "validate-element-name": "^1.0.0",
-    "yeoman-generator": "^0.18.0"
+    "yeoman-generator": "^0.19.2"
   },
   "devDependencies": {
     "mocha": "*"
