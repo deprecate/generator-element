@@ -1,18 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <meta charset="UTF-8">
+
+    <meta charset="utf-8">
     <title>&lt;<%= githubRepo %>&gt;</title>
 
-    <!-- Importing Web Component's Polyfill -->
-    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <!-- Imports polyfill -->
+    <script src="../webcomponentsjs/webcomponents<% if (boilerplate == 'Polymer') { %>-lite<% } %>.min.js"></script>
 
-    <!-- Importing Custom Elements -->
-    <link rel="import" href="src/<%= elementName %>.html">
+    <!-- Imports custom element -->
+    <link rel="import" href="<%= elementName %>.html">
+
 </head>
 <body>
 
-    <!-- Using Custom Elements -->
+    <!-- Runs custom element -->
     <<%= elementName %>></<%= elementName %>>
 
 </body>

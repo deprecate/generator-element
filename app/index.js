@@ -2,7 +2,6 @@
 
 var banner = require('../banner');
 var path = require('path');
-var util = require('util');
 var yeoman = require('yeoman-generator');
 var elementNameValidator = require('validate-element-name');
 
@@ -61,9 +60,9 @@ var ElementGenerator = yeoman.generators.Base.extend({
 
     files: function () {
         var boilerplateFile = {
-            'Polymer'  : 'src/_polymer.html',
-            'X-Tag'    : 'src/_xtag.html',
-            'VanillaJS': 'src/_vanillajs.html'
+            'Polymer'  : '_element-polymer.html',
+            'X-Tag'    : '_element-xtag.html',
+            'VanillaJS': '_element-vanillajs.html'
         };
 
         this.copy(boilerplateFile[this.boilerplate], this.elementName + '.html');
