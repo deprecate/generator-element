@@ -14,8 +14,8 @@
         "bower_components"
     ],
     "dependencies": {<% if (boilerplate == 'VanillaJS') { %>
-        "webcomponentsjs": "^0.7.0"<% } %><% if (boilerplate == 'Polymer') { %>
-        "polymer": "Polymer/polymer#^0.9.0"<% } %><% if (boilerplate == 'X-Tag') { %>
-        "x-tag-core": "^1.0.14"<% } %>
+        "webcomponentsjs": "^0.7.2"<% } %><% if (boilerplate == 'Polymer') { %>
+        "polymer": "Polymer/polymer#^1.0.0"<% } %><% if (boilerplate == 'X-Tag') { %>
+        "x-tag-core": "^1.1.6"<% } %>
     }
 }
