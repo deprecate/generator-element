@@ -56,7 +56,7 @@ var RepoGenerator = yeoman.generators.Base.extend({
                 var done = this.async();
 
                 pkgNameValidator(answers.githubRepo, function (err, available) {
-                    if (!available.bower) {
+                    if (!available || !available.bower) {
                         done(true);
                     }
 
