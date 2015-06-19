@@ -72,6 +72,7 @@ var RepoGenerator = yeoman.generators.Base.extend({
         }, {
             name: 'githubUser',
             message: 'What\'s your GitHub username?',
+            store: true,
             default: 'my-user'
         }, {
             name: 'elementName',
