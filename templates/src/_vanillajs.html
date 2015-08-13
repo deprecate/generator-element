@@ -1,10 +1,26 @@
+<template>
+  <img class="webcomponents" src="http://webcomponents.org/img/logo.svg">
+  <p>Hello from <%= elementName %>!</p>
+  <content select="*"></content>
+</template>
+
 <script>
 (function() {
-    // Creates an object based in the HTML Element prototype
-    var element = Object.create(HTMLElement.prototype);<% if (lifecycle) { %>
+
+    // Save reference to this script.
+    var currScript = document._currentScript || document.currentScript;
+
+    // Access above template tag.
+    var tmpl = currScript.ownerDocument.querySelector('template');
+
+    // Create a prototype for a new element that extends HTMLElement
+    var element = Object.create(HTMLElement.prototype);
 
     // Fires when an instance of the element is created
-    element.createdCallback = function() {};
+    element.createdCallback = function() {
+        var root = this.createShadowRoot();
+        root.appendChild(document.importNode(tmpl.content, true));
+    };<% if (lifecycle) { %>
 
     // Fires when an instance was inserted into the document
     element.attachedCallback = function() {};
