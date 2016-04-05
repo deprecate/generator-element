@@ -38,7 +38,5 @@ describe('element generator', function () {
             assert.file(expected);
             done();
         });
-
-        done();
     });
 });

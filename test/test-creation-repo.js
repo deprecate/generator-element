@@ -38,5 +38,4 @@ describe('repo generator', function () {
             done();
         });
     });
-
 });
