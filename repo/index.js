@@ -6,6 +6,7 @@ var pkgNameValidator = require('pkg-name');
 var util = require('util');
 var yeoman = require('yeoman-generator');
 var elementNameValidator = require('validate-element-name');
+var mkdirp = require('mkdirp');
 
 var RepoGenerator = yeoman.generators.Base.extend({
 
@@ -134,7 +135,7 @@ var RepoGenerator = yeoman.generators.Base.extend({
         this.copy('editorconfig', '.editorconfig');
         this.copy('gitignore', '.gitignore');
 
-        this.mkdir('src');
+        mkdirp('src');
 
         var boilerplateFile = {
             'Polymer'  : 'src/_polymer.html',
