@@ -2,9 +2,12 @@
     "name": "<%= githubRepo %>",
     "version": "0.0.0",
     "description": "<%= elementDescription %>",
-    "license": "MIT",<% if (boilerplate == 'VanillaJS') { %>
-    "main": "src/<%= elementName %>.html",<% } else { %>
-    "main": "dist/<%= elementName %>.html",<% } %>
+    "license": "MIT",
+    <% if (boilerplate == 'VanillaJS') { %>
+    "main": "src/<%= elementName %>.html",
+    <% } else { %>
+    "main": "dist/<%= elementName %>.html",
+    <% } %>
     "keywords": [<% if (boilerplate == 'Polymer') { %>
         "polymer",<% } %><% if (boilerplate == 'X-Tag') { %>
         "x-tag",<% } %>
