@@ -2,12 +2,9 @@
     "name": "<%= githubRepo %>",
     "version": "0.0.0",
     "description": "<%= elementDescription %>",
-    "license": "MIT",
-    <% if (boilerplate == 'VanillaJS') { %>
-    "main": "src/<%= elementName %>.html",
-    <% } else { %>
-    "main": "dist/<%= elementName %>.html",
-    <% } %>
+    "license": "MIT",<% if (boilerplate == 'VanillaJS') { %>
+    "main": "src/<%= elementName %>.html",<% } else { %>
+    "main": "dist/<%= elementName %>.html",<% } %>
     "keywords": [<% if (boilerplate == 'Polymer') { %>
         "polymer",<% } %><% if (boilerplate == 'X-Tag') { %>
         "x-tag",<% } %>
@@ -18,10 +15,11 @@
         "node_modules",
         "bower_components"
     ],
-    "dependencies": {<% if (boilerplate == 'Polymer') { %>
-        "polymer": "Polymer/polymer#^0.5.1"<% } %><% if (boilerplate == 'X-Tag') { %>
+    "dependencies":{<% if (boilerplate == 'Polymer') { %><% if (polymerVersion == '1.4.0') { %>
+        "polymer": "Polymer/polymer#^1.4.0"<% } %><% if (polymerVersion == '0.5.1') { %>
+        "polymer": "Polymer/polymer#^0.5.1"<% } %><% } %><% if (boilerplate == 'X-Tag') { %>
         "x-tag-core": "^1.0.0",
-        "webcomponentsjs": "^0.5.1"<% } %><% if (boilerplate == 'VanillaJS') { %>
-        "webcomponentsjs": "^0.5.1"<% } %>
+        "webcomponentsjs": "^0.7.2"<% } %><% if (boilerplate == 'VanillaJS') { %>
+        "webcomponentsjs": "^0.7.2"<% } %>
     }
 }

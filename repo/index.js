@@ -45,6 +45,26 @@ var RepoGenerator = yeoman.generators.Base.extend({
         }.bind(this));
     },
 
+    askForPolymerVersion: function () {
+        if(this.boilerplate === 'Polymer') {
+            var done = this.async();
+            var log = this.log;
+
+            var prompts = [{
+                type: 'list',
+                name: 'polymerVersion',
+                message: 'What Polymer version do you want to use?',
+                choices: ['1.4.0', '0.5.1']
+            }];
+
+            this.prompt(prompts, function (props) {
+                this.polymerVersion = props.polymerVersion;
+
+                done();
+            }.bind(this));
+        }
+    },
+
     askFor: function () {
         var done = this.async();
         var log = this.log;

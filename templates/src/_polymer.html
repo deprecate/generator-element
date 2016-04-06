@@ -5,13 +5,14 @@
 <polymer-element name="<%= elementName %>">
 
     <script>
-        Polymer('<%= elementName %>', {<% if (lifecycle) { %>
+        Polymer(<% if (polymerVersion == '0.5.1') { %>'<%= elementName %>', <% } %>{<% if (lifecycle) { %><% if (polymerVersion == '1.4.0') { %>
+            is:'<%= elementName %>',<% } %>
             // Fires when an instance of the element is created
             created: function() {},
-
+            <% if (polymerVersion == '0.5.1') { %>
             // Fires when the element’s initial set of children and siblings are guaranteed to exist
             domReady: function() {},
-
+            <% } %>
             // Fires when the "<polymer-element>" has been fully prepared
             ready: function() {},
 
