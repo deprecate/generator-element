@@ -2,8 +2,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
 <!-- Define your custom element -->
-<polymer-element name="<%= elementName %>">
-
+<% if (polymerVersion == '0.5.1') { %><polymer-element name="<%= elementName %>"><% } %><% if (polymerVersion == '1.4.0') { %><dom-module id="<%= elementName %>"><% } %>
     <script>
         Polymer(<% if (polymerVersion == '0.5.1') { %>'<%= elementName %>', <% } %>{<% if (lifecycle) { %><% if (polymerVersion == '1.4.0') { %>
             is:'<%= elementName %>',<% } %>
@@ -25,6 +24,5 @@
             // Fires when an attribute was added, removed, or updated
             attributeChanged: function(attr, oldVal, newVal) {}<% } %>
         });
-    </script>
-
+    </script
 </polymer-element>
