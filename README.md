@@ -21,7 +21,7 @@
 Install this generator using NPM:
 
 ```sh
-$ [sudo] npm install -g webcomponent-generator-element
+$ [sudo] npm install -g generator-webcomponent
 ```
 
 ## Getting Started
@@ -35,7 +35,7 @@ $ [sudo] npm install -g webcomponent-generator-element
 ```
 
 ``` 
-    $ yo webcomponent-generator-element    
+    $ yo wbelement
 ```
 
 ``` 
