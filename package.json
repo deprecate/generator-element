@@ -1,6 +1,6 @@
 {
     "name": "generator-wbelement",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "description": "Yeoman generator to create Custom Elements using Polymer, X-Tag or VanillaJS",
     "author": {
         "name": "Eugenio Romano",
