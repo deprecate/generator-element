@@ -3,7 +3,6 @@
 var banner = require('../banner');
 var path = require('path');
 var pkgNameValidator = require('pkg-name');
-var util = require('util');
 var yeoman = require('yeoman-generator');
 var elementNameValidator = require('validate-element-name');
 
@@ -162,17 +161,17 @@ var RepoGenerator = yeoman.Base.extend({
     },
 
     files: function () {
-        this.fs.copy('_bower.json', 'bower.json');
-        this.fs.copy('demo/_index.html', 'demo/index.html');
-        this.fs.copy('_README.md', 'README.md');
+        this.copy('_bower.json', 'bower.json');
+        this.copy('_index.html', 'demo/index.html');
+        this.copy('_README.md', 'README.md');
 
         if (this.grunt) {
-            this.fs.copy('_package.json', 'package.json');
-            this.fs.copy('_Gruntfile.js', 'Gruntfile.js');
+            this.copy('_package.json', 'package.json');
+            this.copy('_Gruntfile.js', 'Gruntfile.js');
         }
 
-        this.fs.copy('editorconfig', '.editorconfig');
-        this.fs.copy('gitignore', '.gitignore');
+        this.copy('editorconfig', '.editorconfig');
+        this.copy('gitignore', '.gitignore');
 
         var boilerplateFile = {
             'Polymer'  : 'src/_polymer.html',
@@ -180,7 +179,8 @@ var RepoGenerator = yeoman.Base.extend({
             'VanillaJS': 'src/_vanillajs.html'
         };
 
-        this.fs.copy(boilerplateFile[this.boilerplate], 'src/' + this.elementName + '.html');
+        this.copy(boilerplateFile[this.boilerplate], 'src/' + this.elementName + '.html');
+        this.copy('_test.spec.js', 'test/' + this.elementName + '.spec.js');
     }
 });
 
