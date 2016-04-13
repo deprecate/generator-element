@@ -7,7 +7,7 @@ var util = require('util');
 var yeoman = require('yeoman-generator');
 var elementNameValidator = require('validate-element-name');
 
-var RepoGenerator = yeoman.generators.Base.extend({
+var RepoGenerator = yeoman.Base.extend({
 
     init: function () {
         this.sourceRoot(path.join(__dirname, '../templates'));
