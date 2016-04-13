@@ -162,19 +162,17 @@ var RepoGenerator = yeoman.generators.Base.extend({
     },
 
     files: function () {
-        this.copy('_bower.json', 'bower.json');
-        this.copy('_index.html', 'index.html');
-        this.copy('_README.md', 'README.md');
+        this.fs.copy('_bower.json', 'bower.json');
+        this.fs.copy('demo/_index.html', 'demo/index.html');
+        this.fs.copy('_README.md', 'README.md');
 
         if (this.grunt) {
-            this.copy('_package.json', 'package.json');
-            this.copy('_Gruntfile.js', 'Gruntfile.js');
+            this.fs.copy('_package.json', 'package.json');
+            this.fs.copy('_Gruntfile.js', 'Gruntfile.js');
         }
 
-        this.copy('editorconfig', '.editorconfig');
-        this.copy('gitignore', '.gitignore');
-
-        this.mkdir('src');
+        this.fs.copy('editorconfig', '.editorconfig');
+        this.fs.copy('gitignore', '.gitignore');
 
         var boilerplateFile = {
             'Polymer'  : 'src/_polymer.html',
@@ -182,7 +180,7 @@ var RepoGenerator = yeoman.generators.Base.extend({
             'VanillaJS': 'src/_vanillajs.html'
         };
 
-        this.copy(boilerplateFile[this.boilerplate], 'src/' + this.elementName + '.html');
+        this.fs.copy(boilerplateFile[this.boilerplate], 'src/' + this.elementName + '.html');
     }
 });
 

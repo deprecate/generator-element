@@ -4,10 +4,10 @@
   "description": "Yeoman generator to create Custom Elements using Polymer, X-Tag or VanillaJS",
   "author": {
     "name": "Eugenio Romano",
-    "url": "https://github.com/eromano/generator-element"
+    "url": "https://github.com/eromano/webcomponent-generator-element"
   },
   "license": "MIT",
-  "repository": "eromano/generator-element",
+  "repository": "eromano/webcomponent-generator-element",
   "main": "elements/index.js",
   "engines": {
     "node": ">=0.10.0"
@@ -22,8 +22,7 @@
     "webcomponents",
     "polymer",
     "x-tag",
-    "vanillajs",
-    "bosonic"
+    "vanillajs"
   ],
   "dependencies": {
     "chalk": "^1.0.0",
