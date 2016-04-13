@@ -14,7 +14,7 @@ describe('repo generator', function () {
                 return done(err);
             }
 
-            this.repo = helpers.createGenerator('element:repo', [
+            this.repo = helpers.createGenerator('webcompt:gen', [
                 '../../repo'
             ]);
 

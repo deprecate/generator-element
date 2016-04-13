@@ -3,6 +3,7 @@
 
 <!-- Define your custom element -->
 <% if (polymerVersion == '0.5.1') { %><polymer-element name="<%= elementName %>"><% } %><% if (polymerVersion == '1.4.0') { %><dom-module id="<%= elementName %>"><% } %>
+    <template></template>
     <script>
         Polymer(<% if (polymerVersion == '0.5.1') { %>'<%= elementName %>', <% } %>{<% if (lifecycle) { %><% if (polymerVersion == '1.4.0') { %>
             is:'<%= elementName %>',<% } %>
@@ -24,5 +25,5 @@
             // Fires when an attribute was added, removed, or updated
             attributeChanged: function(attr, oldVal, newVal) {}<% } %>
         });
-    </script
+    </script>
 </polymer-element>
