@@ -1,11 +1,10 @@
-/*global describe, beforeEach, afterEach, it */
+/*global describe, beforeEach, it */
 
 'use strict';
 
 var path = require('path');
-var helpers = require('yeoman-generator').test;
-var assert = require('yeoman-generator').assert;
-var yeoman = require('yeoman-generator').generators.Base;
+var helpers = require('yeoman-test');
+var assert = require('yeoman-assert');
 
 describe('repo generator', function () {
     beforeEach(function (done) {
@@ -14,28 +13,27 @@ describe('repo generator', function () {
                 return done(err);
             }
 
-            this.repo = helpers.createGenerator('webcompt:gen', [
-                '../../app'
-            ]);
-
             done();
         }.bind(this));
     });
 
-    it('creates expected files', function (done) {
+    it.skip('creates expected files', function (done) {
+
         var expected = [
             'src/my-element.html', 'bower.json', 'package.json', 'demo/index.html', 'README.md', 'Gruntfile.js', '.editorconfig', '.gitignore'
         ];
-        helpers.mockPrompt(this.repo, {
-            'boilerplate': 'Polymer',
-            'elementName': 'my-element',
-            'lifecycle': true
-        });
 
-        this.repo.options['skip-install'] = true;
-        this.repo.run().on('end', function () {
-            assert.file(expected);
-            done();
-        });
+        helpers.run(path.join( __dirname, '../app'))
+            .withOptions({'skip-install': true})
+            .withPrompts({
+                'boilerplate': 'Polymer',
+                'polymerVersion': '1.4.0',
+                'elementName': 'my-element',
+                'lifecycle': true
+            })
+            .on('end', function () {
+                assert.file(expected);
+                done();
+            });
     });
 });
