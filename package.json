@@ -1,5 +1,5 @@
 {
-  "name": "webcomponent-generator-element",
+  "name": "generator-wbelement",
   "version": "1.0.0",
   "description": "Yeoman generator to create Custom Elements using Polymer, X-Tag or VanillaJS",
   "author": {
@@ -12,6 +12,9 @@
   "engines": {
     "node": ">=0.10.0"
   },
+  "files": [
+      "app"
+  ],
   "scripts": {
     "test": "mocha --reporter spec"
   },
@@ -28,12 +31,10 @@
     "chalk": "^1.0.0",
     "pkg-name": "^1.0.0",
     "validate-element-name": "^1.0.0",
-    "yeoman-generator": "^0.19.2"
+    "yeoman-generator": "^0.22.0",
+    "yo": "1.7.0"
   },
   "devDependencies": {
     "mocha": "*"
-  },
-  "peerDependencies": {
-    "yo": ">=1.0.0"
   }
 }
