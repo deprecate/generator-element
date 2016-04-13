@@ -16,26 +16,12 @@
         "node_modules",
         "bower_components"
     ],
-    "dependencies":{
-        <% if (boilerplate == 'Polymer') { %>
-            <% if (polymerVersion == '1.4.0') { %>
-            "polymer": "Polymer/polymer#^1.4.0"
-            <% } %>
-            <% if (polymerVersion == '0.5.1') { %>
-            "polymer": "Polymer/polymer#^0.5.1"
-            <% } %>
-        <% } %>
-        <% if (boilerplate == 'X-Tag') { %>
-              <% if (xtagVersion == '1.5.0') { %>
-                "x-tag-core": "^1.5.0",
-              <% } %>
-              <% if (xtagVersion == '1.0.0') { %>
-                "x-tag-core": "^1.0.0",
-              <% } %>
-        "webcomponentsjs": "^0.7.2"
-        <% } %>
-        <% if (boilerplate == 'VanillaJS') { %>
-        "webcomponentsjs": "^0.7.2"
-        <% } %>
+    "dependencies":{<% if (boilerplate == 'Polymer') { %><% if (polymerVersion == '1.4.0') { %>
+            "polymer": "Polymer/polymer#^1.4.0"<% } %><% if (polymerVersion == '0.5.1') { %>
+            "polymer": "Polymer/polymer#^0.5.1"<% } %><% } %><% if (boilerplate == 'X-Tag') { %><% if (xtagVersion == '1.5.0') { %>
+            "x-tag-core": "^1.5.0",<% } %><% if (xtagVersion == '1.0.0') { %>
+            "x-tag-core": "^1.0.0",<% } %>
+            "webcomponentsjs": "^0.7.2"<% } %><% if (boilerplate == 'VanillaJS') { %>
+            "webcomponentsjs": "^0.7.2"<% } %>
     }
 }

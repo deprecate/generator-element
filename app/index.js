@@ -71,7 +71,7 @@ var RepoGenerator = yeoman.Base.extend({
 
             var prompts = [{
                 type: 'list',
-                name: 'xTagVersion',
+                name: 'xtagVersion',
                 message: 'What X-Tag version do you want to use?',
                 choices: ['1.0.0', '1.5.0']
             }];
