@@ -162,7 +162,6 @@ var RepoGenerator = yeoman.Base.extend({
 
     files: function () {
         this.copy('_bower.json', 'bower.json');
-        this.copy('_index.html', 'demo/index.html');
         this.copy('_README.md', 'README.md');
 
         if (this.grunt) {
@@ -181,6 +180,8 @@ var RepoGenerator = yeoman.Base.extend({
 
         this.copy(boilerplateFile[this.boilerplate], 'src/' + this.elementName + '.html');
         this.copy('_test.spec.js', 'test/' + this.elementName + '.spec.js');
+        this.copy('_index.html','demo/index.html');
+
     }
 });
 

@@ -14,7 +14,11 @@
   </a>
 </p>
 
-> A Yeoman Generator that provides a functional boilerplate to easily create Custom Elements using [Polymer](http://www.polymer-project.org/), [X-Tag](http://x-tags.org/) or [VanillaJS](http://vanilla-js.com/).
+> A Yeoman Generator that provides a functional boilerplate to easily create Custom Elements using :
+
+ * [Polymer](http://www.polymer-project.org/) Version 0.5 or 1.4
+ * [X-Tag](http://x-tags.org/) Version 1.0.0 or 1.5.0
+ * [VanillaJS](http://vanilla-js.com/)
 
 ## Install
 
@@ -74,7 +78,7 @@ And run `bower install` & `npm install` for you to fetch all dependencies.
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -m 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+5. Submit a pull request
 
 ## History
 
