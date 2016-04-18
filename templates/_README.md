@@ -70,8 +70,14 @@ In order to run it locally you'll need to fetch some dependencies and a basic se
     ```sh
     $ bower install && npm install
     ```
+    
+* To test your project
 
-* To test your project, start the development server and open `http://localhost:8000`.
+    ```sh
+    $ grunt test
+    ```
+    
+* To view your project, start the development server and open `http://localhost:8000`.
 
     ```sh
     $ grunt server

@@ -12,6 +12,9 @@
   <a href='https://github.com/eromano/ci-alarm/blob/master/LICENSE'>
     <img src='https://img.shields.io/badge/license-MIT-blue.svg' alt='license' />
   </a>
+  <a href="https://nodei.co/npm/generator-wbelement/">
+    <img src="http://img.shields.io/npm/v/generator-wbelement.svg">
+  </a>
 </p>
 
 > A Yeoman Generator that provides a functional boilerplate to easily create Custom Elements using :
@@ -66,12 +69,29 @@ Which will generate the following project structure:
     ├── test/
     └── src/my-element.html
 
-
-
     
 And run `bower install` & `npm install` for you to fetch all dependencies.
 
+## Command list 
 
+* To test your project
+
+    ```sh
+    $ grunt test
+    ```
+
+* To build the distribution files before releasing a new version.
+
+    ```sh
+    $ grunt build
+    ```
+
+* To provide a live demo, send everything to `gh-pages` branch.
+
+    ```sh
+    $ grunt deploy
+    ```
+    
 ## Contributing
 
 1. Fork it!

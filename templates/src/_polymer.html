@@ -26,4 +26,4 @@
             attributeChanged: function(attr, oldVal, newVal) {}<% } %>
         });
     </script>
-</polymer-element>
+<% if (polymerVersion == '0.5.1') { %></polymer-element><% } %><% if (polymerVersion == '1.4.0') { %></dom-module><% } %>

@@ -179,7 +179,8 @@ var RepoGenerator = yeoman.Base.extend({
         };
 
         this.copy(boilerplateFile[this.boilerplate], 'src/' + this.elementName + '.html');
-        this.copy('_test.spec.js', 'test/' + this.elementName + '.spec.js');
+        this.copy('_wct.conf.json', 'wct.conf.json');
+        this.copy('_test.html', 'test/' + this.elementName + '-tests.html');
         this.copy('_index.html','demo/index.html');
 
     }
