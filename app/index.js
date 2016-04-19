@@ -1,7 +1,6 @@
 'use strict';
 
 var banner = require('../banner');
-var path = require('path');
 var pkgNameValidator = require('pkg-name');
 var yeoman = require('yeoman-generator');
 var elementNameValidator = require('validate-element-name');
@@ -9,8 +8,6 @@ var elementNameValidator = require('validate-element-name');
 var RepoGenerator = yeoman.Base.extend({
 
     init: function () {
-        this.sourceRoot(path.join(__dirname, '../templates'));
-
         if (!this.options['skip-install-message']) {
             this.log(banner);
         }
@@ -28,7 +25,6 @@ var RepoGenerator = yeoman.Base.extend({
 
     askForBoilerplate: function () {
         var done = this.async();
-        var log = this.log;
 
         var prompts = [{
             type: 'list',
@@ -45,9 +41,8 @@ var RepoGenerator = yeoman.Base.extend({
     },
 
     askForPolymerVersion: function () {
-        if(this.boilerplate === 'Polymer') {
+        if (this.boilerplate === 'Polymer') {
             var done = this.async();
-            var log = this.log;
 
             var prompts = [{
                 type: 'list',
@@ -65,9 +60,8 @@ var RepoGenerator = yeoman.Base.extend({
     },
 
     askForXtagVersion: function () {
-        if(this.boilerplate === 'X-Tag') {
+        if (this.boilerplate === 'X-Tag') {
             var done = this.async();
-            var log = this.log;
 
             var prompts = [{
                 type: 'list',
@@ -78,7 +72,6 @@ var RepoGenerator = yeoman.Base.extend({
 
             this.prompt(prompts, function (props) {
                 this.xtagVersion = props.xtagVersion;
-
                 done();
             }.bind(this));
         }
@@ -97,7 +90,7 @@ var RepoGenerator = yeoman.Base.extend({
             name: 'pkgName',
             message: 'The name above already exists on Bower, choose another?',
             default: true,
-            when: function(answers) {
+            when: function (answers) {
                 var done = this.async();
 
                 pkgNameValidator(answers.githubRepo, function (err, available) {
@@ -173,16 +166,16 @@ var RepoGenerator = yeoman.Base.extend({
         this.copy('gitignore', '.gitignore');
 
         var boilerplateFile = {
-            'Polymer'  : 'src/_polymer.html',
-            'X-Tag'    : 'src/_xtag.html',
+            'Polymer': 'src/_polymer.html',
+            'X-Tag': 'src/_xtag.html',
             'VanillaJS': 'src/_vanillajs.html'
         };
 
         this.copy(boilerplateFile[this.boilerplate], 'src/' + this.elementName + '.html');
         this.copy('_wct.conf.json', 'wct.conf.json');
         this.copy('_test.html', 'test/' + this.elementName + '-tests.html');
-        this.copy('_index.html','demo/index.html');
-
+        this.copy('_index.html', 'demo/index.html');
+        this.copy('_.jscsrc', '.jscsrc');
     }
 });
 

@@ -1,0 +1,39 @@
+{
+  "preset": "google",
+  "fileExtensions": [
+    ".js",
+    "jscs"
+  ],
+  "requireSemicolons": true,
+  "requireParenthesesAroundIIFE": true,
+  "requireCamelCaseOrUpperCaseIdentifiers": false,
+  "maximumLineLength": 180,
+  "validateLineBreaks": "LF",
+  "validateIndentation": 4,
+  "disallowTrailingComma": true,
+  "disallowUnusedParams": true,
+  "disallowMultipleVarDecl": false,
+  "disallowSpacesInsideObjectBrackets": null,
+  "disallowSpacesInAnonymousFunctionExpression": false,
+  "disallowSpacesInFunctionExpression": false,
+  "disallowImplicitTypeConversion": [
+    "string"
+  ],
+  "safeContextKeyword": "_this",
+  "jsDoc": {
+    "checkAnnotations": "closurecompiler",
+    "checkParamNames": true,
+    "requireParamTypes": true,
+    "checkRedundantParams": true,
+    "checkReturnTypes": true,
+    "checkRedundantReturns": true,
+    "requireReturnTypes": true,
+    "checkTypes": "capitalizedNativeCase",
+    "checkRedundantAccess": true,
+    "requireNewlineAfterDescription": true
+  },
+  "excludeFiles": [
+    "test/data/**",
+    "patterns/*"
+  ]
+}

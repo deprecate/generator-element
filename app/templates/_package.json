@@ -5,6 +5,7 @@
         "grunt": "~0.4.1",
         "grunt-cli": "~0.1.9",
         "grunt-contrib-connect": "~1.0.1",
+        "grunt-jscs": "2.8.0",
         "grunt-gh-pages": "~0.9.1"<% if (boilerplate != 'VanillaJS') { %>,
         "grunt-text-replace": "~0.4.0"<% } %>
     }
