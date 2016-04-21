@@ -16,6 +16,8 @@
     <img src="http://img.shields.io/npm/v/generator-wbelement.svg">
   </a>
 </p>
+[![NPM](https://nodei.co/npm/generator-wbelement.png?downloads=true&downloadRank=true)](https://nodei.co/npm/generator-wbelement/)
+[![NPM](https://nodei.co/npm-dl/generator-wbelement.png?months=6&height=3)](https://nodei.co/npm/generator-wbelement/)
 
 > A Yeoman Generator that provides a functional boilerplate to easily create Custom Elements using :
 
