@@ -33,7 +33,9 @@
     "pkg-name": "^1.0.0",
     "validate-element-name": "^1.0.0",
     "yeoman-generator": "^0.22.0",
-    "yo": "1.7.0"
+    "yo": "1.7.0",
+    "mkdirp": "^0.5.1"
+
   },
   "devDependencies": {
     "mocha": "*",
