@@ -4,10 +4,12 @@ var banner = require('../banner');
 var pkgNameValidator = require('pkg-name');
 var yeoman = require('yeoman-generator');
 var elementNameValidator = require('validate-element-name');
+var path = require('path');
+var mkdirp = require('mkdirp');
 
 var RepoGenerator = yeoman.Base.extend({
 
-    init: function () {
+    prompting: function () {
         if (!this.options['skip-install-message']) {
             this.log(banner);
         }
@@ -53,7 +55,6 @@ var RepoGenerator = yeoman.Base.extend({
 
             this.prompt(prompts, function (props) {
                 this.polymerVersion = props.polymerVersion;
-
                 done();
             }.bind(this));
         }
@@ -77,9 +78,49 @@ var RepoGenerator = yeoman.Base.extend({
         }
     },
 
+    askForName: function () {
+        var done = this.async();
+
+        var prompts = [{
+            name: 'elementName',
+            message: 'What\'s the name of your element?',
+            default: 'my-element',
+            validate: function (input) {
+                var result = elementNameValidator(input);
+
+                if (!result.isValid) {
+                    return result.message;
+                }
+
+                if (result.message) {
+                    log.info(result.message);
+                }
+
+                return true;
+            }
+        }];
+
+        this.prompt(prompts, function (props) {
+            this.elementName = props.elementName;
+            done();
+        }.bind(this));
+    },
+
+    checkSubFolder: function () {
+        var done = this.async();
+        if (path.basename(this.destinationPath()) !== this.elementName) {
+            this.log(
+                'Your Web component must be inside a folder named ' + this.elementName + '\n' +
+                'I\'ll automatically create this folder.'
+            );
+            mkdirp(this.elementName);
+            this.destinationRoot(this.destinationPath(this.elementName));
+        }
+        done();
+    },
+
     askFor: function () {
         var done = this.async();
-        var log = this.log;
 
         var prompts = [{
             name: 'githubRepo',
@@ -106,23 +147,6 @@ var RepoGenerator = yeoman.Base.extend({
             message: 'What\'s your GitHub username?',
             store: true,
             default: 'my-user'
-        }, {
-            name: 'elementName',
-            message: 'What\'s the name of your element?',
-            default: 'my-element',
-            validate: function (input) {
-                var result = elementNameValidator(input);
-
-                if (!result.isValid) {
-                    return result.message;
-                }
-
-                if (result.message) {
-                    log.info(result.message);
-                }
-
-                return true;
-            }
         }, {
             name: 'elementDescription',
             message: 'How would you describe the element?',
@@ -153,7 +177,7 @@ var RepoGenerator = yeoman.Base.extend({
         }.bind(this));
     },
 
-    files: function () {
+    writing: function () {
         this.copy('_bower.json', 'bower.json');
         this.copy('_README.md', 'README.md');
 
@@ -177,6 +201,7 @@ var RepoGenerator = yeoman.Base.extend({
         this.copy('_index.html', 'demo/index.html');
         this.copy('_.jscsrc', '.jscsrc');
     }
+
 });
 
 module.exports = RepoGenerator;
