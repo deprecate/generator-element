@@ -1,24 +1,27 @@
 <h1 align="center">Yeoman Generator Webcomponent</h1>
 <p align="center">
-  <img title="yeoman generator" src='https://github.com/yeoman/media/blob/master/optimized/yeoman-150x150-opaque.png' />
+  <img src='https://github.com/yeoman/media/blob/master/optimized/yeoman-150x150-opaque.png'  alt='yeoman logo'/>
 </p>
 <p align="center">
   <a title='Build Status' href="https://travis-ci.org/eromano/webcomponent-generator-element">
-    <img src='https://travis-ci.org/eromano/webcomponent-generator-element.svg?branch=master' />
+    <img src='https://travis-ci.org/eromano/webcomponent-generator-element.svg?branch=master'  alt='travis Status' />
   </a>
-  <a href='https://coveralls.io/r/eromano/webcomponent-generator-element'>
+  <a  alt='Coverage Status' href='https://coveralls.io/r/eromano/webcomponent-generator-element'>
     <img src='https://img.shields.io/coveralls/eromano/webcomponent-generator-element.svg' alt='Coverage Status' />
   </a>
-  <a href='https://github.com/eromano/webcomponent-generator-element/blob/master/LICENSE'>
+  <a  alt='license' href='https://github.com/eromano/webcomponent-generator-element/blob/master/LICENSE'>
     <img src='https://img.shields.io/badge/license-MIT-blue.svg' alt='license' />
   </a>
-  <a href="https://nodei.co/npm/generator-wbelement/">
-    <img src="http://img.shields.io/npm/v/generator-wbelement.svg">
+  <a alt='npm version' href="https://nodei.co/npm/generator-wbelement/">
+    <img src="http://img.shields.io/npm/v/generator-wbelement.svg" alt='npm version' >
   </a>
+      <a alt='downloads stats' href='https://npmjs.org/package/webcomponent-generator-element'>
+        <img src='https://img.shields.io/npm/dm/generator-wbelement.svg' alt='downloads stats' />
+      </a>
+    <a  alt='issue stats closed' href='http://issuestats.com/github/eromano/webcomponent-generator-element'>
+      <img src='http://issuestats.com/github/eromano/webcomponent-generator-element/badge/issue' alt='issue stats' />
+    </a>
 </p>
-[![NPM](https://nodei.co/npm/generator-wbelement.png?downloads=true&downloadRank=true)](https://nodei.co/npm/generator-wbelement/)
-[![NPM](https://nodei.co/npm-dl/generator-wbelement.png?months=6&height=3)](https://nodei.co/npm/generator-wbelement/)
-
 > A Yeoman Generator that provides a functional boilerplate to easily create Custom Elements using :
 
  * [Polymer](http://www.polymer-project.org/) Version 0.5 or 1.4
