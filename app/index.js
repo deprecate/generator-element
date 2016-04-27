@@ -6,6 +6,7 @@ var yeoman = require('yeoman-generator');
 var elementNameValidator = require('validate-element-name');
 var path = require('path');
 var mkdirp = require('mkdirp');
+var _ = require('lodash');
 
 var RepoGenerator = yeoman.Base.extend({
 
@@ -37,7 +38,6 @@ var RepoGenerator = yeoman.Base.extend({
 
         this.prompt(prompts, function (props) {
             this.boilerplate = props.boilerplate;
-
             done();
         }.bind(this));
     },
@@ -148,10 +148,30 @@ var RepoGenerator = yeoman.Base.extend({
             store: true,
             default: 'my-user'
         }, {
+            name: 'authorName',
+            message: 'Author\'s Name',
+            default: this.user.git.name(),
+            store: true
+        }, {
+            name: 'authorEmail',
+            message: 'Author\'s Email',
+            default: this.user.git.email(),
+            store: true
+        }, {
+            name: 'authorUrl',
+            message: 'Author\'s Homepage',
+            store: true
+        }, {
             name: 'elementDescription',
             message: 'How would you describe the element?',
             default: 'My awesome Custom Element'
         }, {
+            name: 'keywords',
+            message: 'Package keywords (comma to split)',
+            filter: function (words) {
+                return words.split(/\s*,\s*/g);
+            }
+        },{
             type: 'confirm',
             name: 'lifecycle',
             message: 'Do you want to include lifecycle callbacks?',
@@ -164,15 +184,7 @@ var RepoGenerator = yeoman.Base.extend({
         }];
 
         this.prompt(prompts, function (props) {
-            if (props.pkgName) {
-                return this.askFor();
-            }
-
-            for (var i = 0; i < prompts.length; i++) {
-                var name = prompts[i].name;
-                this[name] = props[name];
-            }
-
+            this.props = _.extend(this, props);
             done();
         }.bind(this));
     },
@@ -184,6 +196,14 @@ var RepoGenerator = yeoman.Base.extend({
         if (this.grunt) {
             this.copy('_package.json', 'package.json');
             this.copy('_Gruntfile.js', 'Gruntfile.js');
+
+            var currentPkg = this.fs.readJSON(this.destinationPath('package.json'), {});
+
+            var pkg = _.extend({
+                keywords :this.props.keywords
+            }, currentPkg);
+
+            this.fs.writeJSON(this.destinationPath('package.json'), pkg);
         }
 
         this.copy('editorconfig', '.editorconfig');
@@ -200,6 +220,16 @@ var RepoGenerator = yeoman.Base.extend({
         this.copy('_test.html', 'test/' + this.elementName + '-tests.html');
         this.copy('_index.html', 'demo/index.html');
         this.copy('_.jscsrc', '.jscsrc');
+
+        this.composeWith('license', {
+            options: {
+                name: this.props.authorName,
+                email: this.props.authorEmail,
+                website: this.props.authorUrl
+            }
+        }, {
+            local: require.resolve('generator-license/app')
+        });
     }
 
 });

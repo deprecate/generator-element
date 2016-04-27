@@ -1,4 +1,7 @@
 # &lt;<%= githubRepo %>&gt;
+[![NPM version][npm-image]][npm-url] 
+[![Build Status][travis-image]][travis-url] 
+[![Blog][blog-image]][blog-url] 
 
 > <%= elementDescription %>
 
@@ -124,3 +127,11 @@ For detailed changelog, check [Releases](https://github.com/<%= githubUser %>/<%
 ## License
 
 [MIT License](http://opensource.org/licenses/MIT)
+
+
+[npm-image]: https://badge.fury.io/js/<%= githubRepo %>.svg
+[npm-url]: https://npmjs.org/package/<%= githubRepo %>
+[travis-image]: https://travis-ci.org/<%= githubUser %>/<%= githubRepo %>.svg?branch=master
+[travis-url]: https://travis-ci.org/<%= githubUser %>/<%= githubRepo %>
+[blog-image]: https://img.shields.io/badge/style-blog-blue.svg?label=my
+[blog-url]: <%= authorUrl %>

@@ -1,49 +1,50 @@
 {
-  "name": "generator-wbelement",
-  "version": "0.1.4",
-  "description": "Yeoman generator to create Custom Elements using Polymer, X-Tag or VanillaJS",
-  "author": "Eugenio Romano (https://github.com/eromano/webcomponent-generator-element)",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eromano/webcomponent-generator-element.git"
-  },
-  "main": "elements/index.js",
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "files": [
-    "app"
-  ],
-  "scripts": {
-    "test": "mocha --reporter spec"
-  },
-  "keywords": [
-    "yeoman-generator",
-    "web component",
-    "custom-elements",
-    "web-components",
-    "webcomponents",
-    "polymer",
-    "x-tag",
-    "vanillajs"
-  ],
-  "dependencies": {
-    "chalk": "^1.0.0",
-    "pkg-name": "^1.0.0",
-    "validate-element-name": "^1.0.0",
-    "yeoman-generator": "^0.22.0",
-    "yo": "1.7.0",
-    "mkdirp": "^0.5.1"
-
-  },
-  "devDependencies": {
-    "mocha": "*",
-    "yeoman-test": "1.1.0",
-    "yeoman-assert": "2.1.2"
-  },
-  "bugs": {
-    "url": "https://github.com/eromano/webcomponent-generator-element/issues"
-  },
-  "homepage": "https://github.com/eromano/webcomponent-generator-element#readme"
+    "name": "generator-wbelement",
+    "version": "0.1.5",
+    "description": "Yeoman generator to create Custom Elements using Polymer, X-Tag or VanillaJS",
+    "author": "Eugenio Romano (https://github.com/eromano/webcomponent-generator-element)",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/eromano/webcomponent-generator-element.git"
+    },
+    "main": "elements/index.js",
+    "engines": {
+        "node": ">=0.10.0"
+    },
+    "files": [
+        "app"
+    ],
+    "scripts": {
+        "test": "mocha --reporter spec"
+    },
+    "keywords": [
+        "yeoman-generator",
+        "web component",
+        "custom-elements",
+        "web-components",
+        "webcomponents",
+        "polymer",
+        "x-tag",
+        "vanillajs"
+    ],
+    "dependencies": {
+        "chalk": "^1.0.0",
+        "generator-license": "^3.0.0",
+        "pkg-name": "^1.0.0",
+        "validate-element-name": "^1.0.0",
+        "yeoman-generator": "^0.22.0",
+        "yo": "1.7.0",
+        "lodash": "^4.6.1",
+        "mkdirp": "^0.5.1"
+    },
+    "devDependencies": {
+        "mocha": "*",
+        "yeoman-test": "1.1.0",
+        "yeoman-assert": "2.1.2"
+    },
+    "bugs": {
+        "url": "https://github.com/eromano/webcomponent-generator-element/issues"
+    },
+    "homepage": "https://github.com/eromano/webcomponent-generator-element#readme"
 }
