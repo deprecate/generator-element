@@ -50,8 +50,14 @@ npm install -g generator-wbelement
     4. What's your GitHub username?
     5. What's the name of your element?
     6. How would you describe the element?
-    7. Do you want to include lifecycle callbacks?
-    8. Do you want to include some useful Grunt tasks?
+    7. What's your GitHub username? componentCreatorAccount
+    8. Author's Name ?
+    9. Author's Email ?
+   10. Author's Homepage ?
+   11  Package keywords (comma to split) 
+   12. Do you want to include lifecycle callbacks?
+   13. Do you want to include some useful Grunt tasks?
+   14. Which license do you want to use?
 ```
 
 Which will generate the following project structure:
@@ -62,6 +68,8 @@ Which will generate the following project structure:
     ├── bower.json
     ├── package.json
     ├── Gruntfile.js
+    ├── README
+    ├── LICENSE
     ├── demo/
     ├── test/my-element-tests.html
     └── src/my-element.html
