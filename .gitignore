@@ -1,2 +1,6 @@
+test/temp/
+/npm-debug.log
+/.idea
+bower_components/
 node_modules/
-temp/
+/test/temp/my-element.html

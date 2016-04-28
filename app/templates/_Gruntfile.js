@@ -4,10 +4,36 @@ module.exports = function(grunt) {
         'connect': {
             demo: {
                 options: {
-                    open: true,
+                    open: {
+                        target: 'http://localhost:8000/demo'
+                    },
                     keepalive: true
                 }
             }
+        },
+        'jscs': {
+            src: [
+                'Gruntfile.js',
+                'test/*.js',
+                'src/**/*.js'
+            ],
+            options: {
+                config: '.jscsrc',
+                esnext: true,
+                verbose: true,
+                fix: true
+            }
+        },
+        'wct-test': {
+            local: {
+                options: {remote: false},
+            },
+            remote: {
+                options: {remote: true},
+            },
+            chrome: {
+                options: {browsers: ['chrome']},
+            },
         },
         'gh-pages': {
             options: {
@@ -31,12 +57,15 @@ module.exports = function(grunt) {
         }<% } %>
     });
 
+    grunt.loadNpmTasks("grunt-jscs");
+    grunt.loadNpmTasks('web-component-tester');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-gh-pages');<% if (boilerplate != 'VanillaJS') { %>
     grunt.loadNpmTasks('grunt-text-replace');<% } %>
 <% if (boilerplate != 'VanillaJS') { %>
     grunt.registerTask('build',  ['replace']);<% } %>
     grunt.registerTask('deploy', ['gh-pages']);
-    grunt.registerTask('server', ['connect']);
+    grunt.registerTask('server', ['jscs', 'wct-test:local', 'connect']);
+    grunt.registerTask('test', ['wct-test:local']);
 
 };
