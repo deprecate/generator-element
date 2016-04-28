@@ -15,7 +15,7 @@
   <a alt='npm version' href="https://nodei.co/npm/generator-wbelement/">
     <img src="http://img.shields.io/npm/v/generator-wbelement.svg" alt='npm version' >
   </a>
-      <a alt='downloads stats' href='https://npmjs.org/package/webcomponent-generator-element'>
+      <a alt='downloads stats' href='https://www.npmjs.com/package/generator-wbelement'>
         <img src='https://img.shields.io/npm/dm/generator-wbelement.svg' alt='downloads stats' />
       </a>
     <a  alt='issue stats closed' href='http://issuestats.com/github/eromano/webcomponent-generator-element'>
@@ -28,7 +28,7 @@
  * [X-Tag](http://x-tags.org/) Version 1.0.0 or 1.5.0
  * [VanillaJS](http://vanilla-js.com/)
 
-## Installation
+## Installation and use
 
 First, install [Yeoman](http://yeoman.io) and generator web component using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
@@ -68,7 +68,7 @@ Which will generate the following project structure:
     ├── bower.json
     ├── package.json
     ├── Gruntfile.js
-    ├── README
+    ├── README.md
     ├── LICENSE
     ├── demo/
     ├── test/my-element-tests.html
@@ -77,7 +77,7 @@ Which will generate the following project structure:
     
 And run `bower install` & `npm install` for you to fetch all dependencies.
 
-## Command list 
+## Develop command list 
 
 * To test your project
 
