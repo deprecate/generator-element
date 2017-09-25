@@ -33,6 +33,7 @@ There are two different generators available.
 
     ```sh
 $ yo element
+
     ```
 
     ```
@@ -46,12 +47,14 @@ $ yo element
     ```
 .
 └── my-element.html
+
     ```
 
 * The second one is used to scaffold an **entire project**:
 
     ```sh
 $ yo element:repo
+
     ```
 
     ```
@@ -75,6 +78,7 @@ $ yo element:repo
 ├── index.html
 ├── Gruntfile.js
 └── src/my-element.html
+
     ```
 
     And run `bower install` & `npm install` for you to fetch all dependencies.
