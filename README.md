@@ -32,8 +32,7 @@ There are two different generators available.
 * The first one used to scaffold out new **individual elements**:
 
     ```sh
-$ yo element
-
+    $ yo element
     ```
 
     ```
@@ -45,9 +44,8 @@ $ yo element
     Which will generate the following file:
 
     ```
-.
-└── my-element.html
-
+    .
+    └── my-element.html
     ```
 
 * The second one is used to scaffold an **entire project**:
