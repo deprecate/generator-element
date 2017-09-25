@@ -36,9 +36,9 @@ There are two different generators available.
     ```
 
     ```
-[?] What do you want to use?
-[?] What's the name of your element?
-[?] Do you want to include lifecycle callbacks?
+    [?] What do you want to use?
+    [?] What's the name of your element?
+    [?] Do you want to include lifecycle callbacks?
     ```
 
     Which will generate the following file:
