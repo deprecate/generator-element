@@ -51,32 +51,30 @@ There are two different generators available.
 * The second one is used to scaffold an **entire project**:
 
     ```sh
-$ yo element:repo
-
+    $ yo element:repo
     ```
 
     ```
-[?] What do you want to use?
-[?] What's the GitHub repository?
-[?] What's your GitHub username?
-[?] What's the name of your element?
-[?] How would you describe the element?
-[?] Do you want to include lifecycle callbacks?
-[?] Do you want to include some useful Grunt tasks?
+    [?] What do you want to use?
+    [?] What's the GitHub repository?
+    [?] What's your GitHub username?
+    [?] What's the name of your element?
+    [?] How would you describe the element?
+    [?] Do you want to include lifecycle callbacks?
+    [?] Do you want to include some useful Grunt tasks?
     ```
 
     Which will generate the following project structure:
 
     ```
-.
-├── .editorconfig
-├── .gitignore
-├── bower.json
-├── package.json
-├── index.html
-├── Gruntfile.js
-└── src/my-element.html
-
+    .
+    ├── .editorconfig
+    ├── .gitignore
+    ├── bower.json
+    ├── package.json
+    ├── index.html
+    ├── Gruntfile.js
+    └── src/my-element.html
     ```
 
     And run `bower install` & `npm install` for you to fetch all dependencies.
