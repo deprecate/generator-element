@@ -32,49 +32,49 @@ There are two different generators available.
 * The first one used to scaffold out new **individual elements**:
 
     ```sh
-$ yo element
+    $ yo element
     ```
 
     ```
-[?] What do you want to use?
-[?] What's the name of your element?
-[?] Do you want to include lifecycle callbacks?
+    [?] What do you want to use?
+    [?] What's the name of your element?
+    [?] Do you want to include lifecycle callbacks?
     ```
 
     Which will generate the following file:
 
     ```
-.
-└── my-element.html
+    .
+    └── my-element.html
     ```
 
 * The second one is used to scaffold an **entire project**:
 
     ```sh
-$ yo element:repo
+    $ yo element:repo
     ```
 
     ```
-[?] What do you want to use?
-[?] What's the GitHub repository?
-[?] What's your GitHub username?
-[?] What's the name of your element?
-[?] How would you describe the element?
-[?] Do you want to include lifecycle callbacks?
-[?] Do you want to include some useful Grunt tasks?
+    [?] What do you want to use?
+    [?] What's the GitHub repository?
+    [?] What's your GitHub username?
+    [?] What's the name of your element?
+    [?] How would you describe the element?
+    [?] Do you want to include lifecycle callbacks?
+    [?] Do you want to include some useful Grunt tasks?
     ```
 
     Which will generate the following project structure:
 
     ```
-.
-├── .editorconfig
-├── .gitignore
-├── bower.json
-├── package.json
-├── index.html
-├── Gruntfile.js
-└── src/my-element.html
+    .
+    ├── .editorconfig
+    ├── .gitignore
+    ├── bower.json
+    ├── package.json
+    ├── index.html
+    ├── Gruntfile.js
+    └── src/my-element.html
     ```
 
     And run `bower install` & `npm install` for you to fetch all dependencies.
