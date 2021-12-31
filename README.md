@@ -20,7 +20,7 @@
 Install this generator using NPM:
 
 ```sh
-$ [sudo] npm install -g generator-element
+[sudo] npm install -g generator-element
 ```
 
 ## Getting Started
@@ -31,53 +31,53 @@ There are two different generators available.
 
 * The first one used to scaffold out new **individual elements**:
 
-    ```sh
-    $ yo element
-    ```
+```sh
+yo element
+```
 
-    ```
-    [?] What do you want to use?
-    [?] What's the name of your element?
-    [?] Do you want to include lifecycle callbacks?
-    ```
+```
+[?] What do you want to use?
+[?] What's the name of your element?
+[?] Do you want to include lifecycle callbacks?
+```
 
-    Which will generate the following file:
+Which will generate the following file:
 
-    ```
-    .
-    └── my-element.html
-    ```
+```
+.
+└── my-element.html
+```
 
 * The second one is used to scaffold an **entire project**:
 
-    ```sh
-    $ yo element:repo
-    ```
+```sh
+yo element:repo
+```
 
-    ```
-    [?] What do you want to use?
-    [?] What's the GitHub repository?
-    [?] What's your GitHub username?
-    [?] What's the name of your element?
-    [?] How would you describe the element?
-    [?] Do you want to include lifecycle callbacks?
-    [?] Do you want to include some useful Grunt tasks?
-    ```
+```
+[?] What do you want to use?
+[?] What's the GitHub repository?
+[?] What's your GitHub username?
+[?] What's the name of your element?
+[?] How would you describe the element?
+[?] Do you want to include lifecycle callbacks?
+[?] Do you want to include some useful Grunt tasks?
+```
 
-    Which will generate the following project structure:
+Which will generate the following project structure:
 
-    ```
-    .
-    ├── .editorconfig
-    ├── .gitignore
-    ├── bower.json
-    ├── package.json
-    ├── index.html
-    ├── Gruntfile.js
-    └── src/my-element.html
-    ```
+```
+.
+├── .editorconfig
+├── .gitignore
+├── bower.json
+├── package.json
+├── index.html
+├── Gruntfile.js
+└── src/my-element.html
+```
 
-    And run `bower install` & `npm install` for you to fetch all dependencies.
+And run `bower install` & `npm install` for you to fetch all dependencies.
 
 > _**Note**: files will be generated in the current directory, so be sure to change to a new directory before running those commands if you don't want to overwrite existing files._
 
