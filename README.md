@@ -97,9 +97,9 @@ For detailed changelog, see [Releases](https://github.com/webcomponents/generato
 
 This project is maintained by these people and a bunch of awesome [contributors](https://github.com/webcomponents/generator-element/graphs/contributors).
 
-[![Zeno Rocha](https://2.gravatar.com/avatar/e190023b66e2b8aa73a842b106920c93)](https://github.com/zenorocha) | [![Addy Rocha](https://2.gravatar.com/avatar/96270e4c3e5e9806cf7245475c00b275)](https://github.com/addyosmani)
---- | --- | --- | --- | ---
-[Zeno Rocha](https://github.com/zenorocha) | [Addy Osmani](https://github.com/addyosmani)
+[![Zeno Rocha](https://2.gravatar.com/avatar/e190023b66e2b8aa73a842b106920c93)](https://github.com/zenorocha) | [![Addy Rocha](https://2.gravatar.com/avatar/96270e4c3e5e9806cf7245475c00b275)](https://github.com/addyosmani) |
+--- | --- |
+[Zeno Rocha](https://github.com/zenorocha) | [Addy Osmani](https://github.com/addyosmani) |
 
 ## License
 
