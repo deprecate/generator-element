@@ -3,7 +3,6 @@
 var banner = require('../banner');
 var path = require('path');
 var pkgNameValidator = require('pkg-name');
-var util = require('util');
 var yeoman = require('yeoman-generator');
 var elementNameValidator = require('validate-element-name');
 
@@ -19,17 +18,12 @@ var RepoGenerator = yeoman.generators.Base.extend({
         this.on('end', function () {
             if (!this.options['skip-install']) {
                 this.bowerInstall();
-
-                if (this.grunt) {
-                    this.npmInstall();
-                }
             }
         });
     },
 
     askForBoilerplate: function () {
         var done = this.async();
-        var log = this.log;
 
         var prompts = [{
             type: 'list',
@@ -62,7 +56,7 @@ var RepoGenerator = yeoman.generators.Base.extend({
                 var done = this.async();
 
                 pkgNameValidator(answers.githubRepo, function (err, available) {
-                    if (!available.bower) {
+                    if (!available || !available.bower) {
                         done(true);
                     }
 
@@ -100,11 +94,6 @@ var RepoGenerator = yeoman.generators.Base.extend({
             name: 'lifecycle',
             message: 'Do you want to include lifecycle callbacks?',
             default: true
-        }, {
-            type: 'confirm',
-            name: 'grunt',
-            message: 'Do you want to include some useful Grunt tasks?',
-            default: true
         }];
 
         this.prompt(prompts, function (props) {
@@ -126,23 +115,16 @@ var RepoGenerator = yeoman.generators.Base.extend({
         this.copy('_index.html', 'index.html');
         this.copy('_README.md', 'README.md');
 
-        if (this.grunt) {
-            this.copy('_package.json', 'package.json');
-            this.copy('_Gruntfile.js', 'Gruntfile.js');
-        }
-
         this.copy('editorconfig', '.editorconfig');
         this.copy('gitignore', '.gitignore');
 
-        this.mkdir('src');
-
         var boilerplateFile = {
-            'Polymer'  : 'src/_polymer.html',
-            'X-Tag'    : 'src/_xtag.html',
-            'VanillaJS': 'src/_vanillajs.html'
+            'Polymer'  : '_element-polymer.html',
+            'X-Tag'    : '_element-xtag.html',
+            'VanillaJS': '_element-vanillajs.html'
         };
 
-        this.copy(boilerplateFile[this.boilerplate], 'src/' + this.elementName + '.html');
+        this.copy(boilerplateFile[this.boilerplate], this.elementName + '.html');
     }
 });
 

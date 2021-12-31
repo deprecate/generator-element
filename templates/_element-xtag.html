@@ -1,8 +1,9 @@
-<!-- Import X-Tag -->
-<script src="../bower_components/x-tag-core/src/core.js"></script>
+<!-- Import x-tag -->
+<script src="../x-tag-core/src/core.js"></script>
 
 <script>
 (function() {
+    // Registers custom element
     xtag.register('<%= elementName %>', {<% if (lifecycle) { %>
         lifecycle: {
             // Fires when an instance of the element is created
